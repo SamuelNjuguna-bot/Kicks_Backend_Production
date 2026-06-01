@@ -1,5 +1,5 @@
 import axios from "axios";
-import { timestamp } from "../../Utils/timeStamp.ts";
+import { timestamp } from "../../Utils/timeStamp.js";
 import type { Response } from "express";
 import type { RequestExtended } from "../../middlewares/generateToken";
 

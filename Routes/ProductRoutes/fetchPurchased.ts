@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { prisma } from "../../lib/prisma.ts";
+import { prisma } from "../../lib/prisma.js";
 
 export const fetchPurchased = async (req: Request, res: Response) => {
   try {
