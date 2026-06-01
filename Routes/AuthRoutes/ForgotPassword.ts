@@ -1,0 +1,28 @@
+import type { Request, Response, NextFunction } from "express";
+import { prisma } from "../../lib/prisma.ts";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+dotenv.config();
+const JWTSECRETKEY: string = process.env.JWT_SECRET_KEY!;
+
+export default async function ForgotPassword(req: Request, res: Response) {
+  try {
+    const { email, password } = req.body;
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    const changedPassword = await prisma.user.update({
+      where: {
+        email,
+      },
+      data: {
+        password: hashedPassword,
+      },
+    });
+
+    res.status(200).json({ message: "success", changedPassword });
+  } catch {
+    res.status(500).json({ message: "Something Went Wrong !!!" });
+  }
+}

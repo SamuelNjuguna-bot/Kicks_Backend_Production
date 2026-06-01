@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "CartItems" ALTER COLUMN "size" SET DEFAULT '1',
+ALTER COLUMN "size" SET DATA TYPE TEXT;

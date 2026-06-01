@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/prisma"
+  previewFeatures = ["fullTextSearchPostgres"]
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+
+model User {
+  id       String @id @default(uuid())
+  username String @unique @map("username")
+  email    String @unique @map("email")
+  password String @unique @map("password")
+
+  @@map("user")
+}
+
+model Products {
+  id           String  @id @default(uuid())
+  productTitle String  @map("product_title")
+  productName  String  @map("product_name")
+  image        String  @map("product_image")
+  description  String  @map("product_description")
+  price        Float   @map("price")
+  category     String  @map("category")
+  gender       String  @map("gender")
+  cart       CartItems[]
+  purchased PurchasedProduct[]
+  @@map("products")
+}
+
+model CartItems{
+  cartId String @id @default(uuid())
+  productId String 
+  userId String 
+  pId Products @relation(fields: [productId], references: [id])
+  total_Amount Int
+  color String  
+  Quantity Int @default(1)
+  size String @default("1")
+}
+
+
+
+model PurchasedProduct{
+  acquiredId String  @id @default(uuid())
+  productId String 
+  TransactionString String
+  PhoneNumber String
+  Amount Int @default(200)
+  Location String
+  MerchantRequestID String  @default("merchant")
+  product String
+  purchasedId Products @relation(fields: [product] , references: [id])
+}
