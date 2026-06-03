@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { prisma } from "../../lib/prisma.js";
+import { prisma } from "../../lib/prisma";
 import store from "node-persist";
 
 store.init();

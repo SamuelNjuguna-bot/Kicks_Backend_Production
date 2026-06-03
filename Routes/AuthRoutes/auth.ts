@@ -2,7 +2,7 @@ import type { Request, Response } from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import { prisma } from "../../lib/prisma.js";
+import { prisma } from "../../lib/prisma";
 dotenv.config();
 const JWTSECRETKEY: string = process.env.JWT_SECRET_KEY!;
 

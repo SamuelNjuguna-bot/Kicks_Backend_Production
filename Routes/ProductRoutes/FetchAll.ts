@@ -1,4 +1,4 @@
-import { prisma } from "../../lib/prisma.js";
+import { prisma } from "../../lib/prisma";
 import type { Request, Response } from "express";
 
 export const fetchAll = async (req: Request, res: Response) => {
