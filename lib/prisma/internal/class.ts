@@ -12,7 +12,7 @@
  */
 
 import * as runtime from "@prisma/client/runtime/client.js"
-import type * as Prisma from "./prismaNamespace.js"
+import type * as Prisma from "./prismaNamespaceBrowser.js"
 
 
 const config: runtime.GetPrismaClientConfig = {
