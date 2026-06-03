@@ -1,4 +1,4 @@
-import { prisma } from "../lib/prisma";
+import { prisma } from "../lib/prisma.js";
 async function getUser(req: any, res: any, next: any) {
   const { username, email } = req.body;
   try {

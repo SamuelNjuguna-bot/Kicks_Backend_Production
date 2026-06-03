@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { prisma } from "../../lib/prisma";
+import { prisma } from "../../lib/prisma.js";
 export const cartItem = async (req: Request, res: Response) => {
   try {
     const { Size, Total, prodId, color, id } = req.body;

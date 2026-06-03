@@ -8,8 +8,8 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/User'
-export type * from './models/Products'
-export type * from './models/CartItems'
-export type * from './models/PurchasedProduct'
-export type * from './commonInputTypes'
+export type * from './models/User.js'
+export type * from './models/Products.js'
+export type * from './models/CartItems.js'
+export type * from './models/PurchasedProduct.js'
+export type * from './commonInputTypes.js'
