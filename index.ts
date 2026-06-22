@@ -29,7 +29,7 @@ import { AllPurchasedProducts } from "./Routes/OrderRoutes/Purchased_Product.js"
 import cors from "cors";
 const app = express();
 const corsOptions = {
-  origin: "https://klassy-kicks-tq24.vercel.app/",
+  origin: "https://klassy-kicks-tq24-git-main-njuguna-samuels-projects.vercel.app/",
   methods: "GET,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
