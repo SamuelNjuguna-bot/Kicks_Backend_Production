@@ -15,6 +15,7 @@ import { cartDetails } from "./Routes/ProductRoutes/cartdetails.js";
 import { removeCart } from "./Routes/ProductRoutes/DeleteCart.js";
 import { generateToken } from "./middlewares/generateToken.js";
 import { handleStkPush } from "./Routes/Payment_Routes/stkPush.js";
+import type { Request, Response } from "express";
 import verify from "./middlewares/getId.js";
 import getUser from "./middlewares/getUser.js";
 import CheckEmail from "./middlewares/checkEmail.js";
@@ -39,6 +40,10 @@ app.use(express.json());
 
 app.use(cors(corsOptions));
 app.use(cookieParser());
+
+app.get("/",async(req:Request, res:Response)=>{
+  res.json({message:"Homepage"})
+})
 app.post("/signup", getUser, signUp);
 app.post("/login", login);
 app.post("/uploadproduct", uploadProduct);
