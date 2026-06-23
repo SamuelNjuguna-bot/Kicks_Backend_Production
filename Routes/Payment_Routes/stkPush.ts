@@ -18,7 +18,7 @@ const handleStkPush = async (req: RequestExtended, res: Response) => {
     PartyA: phone,
     PartyB: process.env.MPESA_BUSINESS_SHORT_CODE,
     PhoneNumber: phone,
-    CallBackURL: `https://nonvisible-lanette-unmelodised.ngrok-free.dev/callbackrecieve/${location}/${itemId}`,
+    CallBackURL: `https://kicks-backend-production.vercel.app/${location}/${itemId}`,
     AccountReference: ` Buy ${product_Name} from Klassy Kicks.`,
     TransactionDesc: "Payment",
   };
