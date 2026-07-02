@@ -56,4 +56,5 @@ model PurchasedProduct{
   MerchantRequestID String  @default("merchant")
   product String
   purchasedId Products @relation(fields: [product] , references: [id])
+  ResultCode String @default(" ")
 }

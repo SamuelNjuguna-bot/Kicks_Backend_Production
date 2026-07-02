@@ -17,8 +17,8 @@
 
 import * as runtime from "@prisma/client/runtime/index-browser"
 
-export type * from '../models.js'
-export type * from './prismaNamespace.js'
+export type * from '../models.ts'
+export type * from './prismaNamespace.ts'
 
 export const Decimal = runtime.Decimal
 
@@ -118,7 +118,8 @@ export const PurchasedProductScalarFieldEnum = {
   Amount: 'Amount',
   Location: 'Location',
   MerchantRequestID: 'MerchantRequestID',
-  product: 'product'
+  product: 'product',
+  ResultCode: 'ResultCode'
 } as const
 
 export type PurchasedProductScalarFieldEnum = (typeof PurchasedProductScalarFieldEnum)[keyof typeof PurchasedProductScalarFieldEnum]
@@ -181,7 +182,8 @@ export const PurchasedProductOrderByRelevanceFieldEnum = {
   PhoneNumber: 'PhoneNumber',
   Location: 'Location',
   MerchantRequestID: 'MerchantRequestID',
-  product: 'product'
+  product: 'product',
+  ResultCode: 'ResultCode'
 } as const
 
 export type PurchasedProductOrderByRelevanceFieldEnum = (typeof PurchasedProductOrderByRelevanceFieldEnum)[keyof typeof PurchasedProductOrderByRelevanceFieldEnum]

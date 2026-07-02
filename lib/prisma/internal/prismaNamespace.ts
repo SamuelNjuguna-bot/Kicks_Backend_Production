@@ -15,11 +15,11 @@
  * model files in the `model` directory!
  */
 
-import * as runtime from "@prisma/client/runtime/client.js"
-import type * as Prisma from "../models.js"
-import { type PrismaClient } from "./class.js"
+import * as runtime from "@prisma/client/runtime/client"
+import type * as Prisma from "../models.ts"
+import { type PrismaClient } from "./class.ts"
 
-export type * from '../models'
+export type * from '../models.ts'
 
 export type DMMF = typeof runtime.DMMF
 
@@ -787,7 +787,8 @@ export const PurchasedProductScalarFieldEnum = {
   Amount: 'Amount',
   Location: 'Location',
   MerchantRequestID: 'MerchantRequestID',
-  product: 'product'
+  product: 'product',
+  ResultCode: 'ResultCode'
 } as const
 
 export type PurchasedProductScalarFieldEnum = (typeof PurchasedProductScalarFieldEnum)[keyof typeof PurchasedProductScalarFieldEnum]
@@ -850,7 +851,8 @@ export const PurchasedProductOrderByRelevanceFieldEnum = {
   PhoneNumber: 'PhoneNumber',
   Location: 'Location',
   MerchantRequestID: 'MerchantRequestID',
-  product: 'product'
+  product: 'product',
+  ResultCode: 'ResultCode'
 } as const
 
 export type PurchasedProductOrderByRelevanceFieldEnum = (typeof PurchasedProductOrderByRelevanceFieldEnum)[keyof typeof PurchasedProductOrderByRelevanceFieldEnum]

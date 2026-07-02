@@ -1,35 +1,25 @@
 import type { NextFunction, Request, Response } from "express";
 import { prisma } from "../../lib/prisma.js";
 import axios from "axios";
-import store from "node-persist";
-
-store.init();
-interface token {
-  token: String;
-}
 export const handleCompletePayment = async (
   req: Request,
   res: Response,
   next: NextFunction,
 ) => {
-  const errorCode = req.body.Body.stkCallback.ResultCode;
+  const ResultCode = String(req.body.Body.stkCallback.ResultCode);
   const MerchantRequestID = req.body.Body.stkCallback.MerchantRequestID;
-
-  if (errorCode !== 0) {
-    const MerchantRequestID = req.body.Body.stkCallback.MerchantRequestID;
-    const errorCode = req.body.Body.stkCallback.ResultCode;
-    await store.setItem(MerchantRequestID, `${errorCode}`);
+  const resultMetaData = req.body.Body.stkCallback.CallbackMetadata;
+  const dat = resultMetaData.Item;
+  const PhoneNumber = String(dat[4].Value);
+  const TransactionString = dat[1].Value;
+  const Amount = dat[0].Value;
+  const { location, itemId } = req.params as unknown as any;
+  if (ResultCode!=="0") {
     return;
   }
-  const resultMetaData = req.body.Body.stkCallback.CallbackMetadata;
-  const data = resultMetaData.Item;
-  const PhoneNumber = String(data[4].Value);
-  const TransactionString = data[1].Value;
-  const Amount = data[0].Value;
-  const { location, itemId } = req.params as unknown as any;
   try {
-    const purchased = await prisma.purchasedProduct.create({
-      data: {
+      const purchased = await prisma.purchasedProduct.create({ 
+         data: {
         productId: itemId,
         TransactionString,
         PhoneNumber,
@@ -37,9 +27,10 @@ export const handleCompletePayment = async (
         Location: location,
         product: itemId,
         MerchantRequestID,
+        ResultCode
       },
-    });
-
+      })
+      console.log(purchased)
     if (purchased) {
       res.json("ok saf");
       return;

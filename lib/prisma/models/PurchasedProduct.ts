@@ -8,9 +8,9 @@
  *
  * 🟢 You can import this file directly.
  */
-import type * as runtime from "@prisma/client/runtime/client.js"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as runtime from "@prisma/client/runtime/client"
+import type * as $Enums from "../enums.ts"
+import type * as Prisma from "../internal/prismaNamespace.ts"
 
 /**
  * Model PurchasedProduct
@@ -43,6 +43,7 @@ export type PurchasedProductMinAggregateOutputType = {
   Location: string | null
   MerchantRequestID: string | null
   product: string | null
+  ResultCode: string | null
 }
 
 export type PurchasedProductMaxAggregateOutputType = {
@@ -54,6 +55,7 @@ export type PurchasedProductMaxAggregateOutputType = {
   Location: string | null
   MerchantRequestID: string | null
   product: string | null
+  ResultCode: string | null
 }
 
 export type PurchasedProductCountAggregateOutputType = {
@@ -65,6 +67,7 @@ export type PurchasedProductCountAggregateOutputType = {
   Location: number
   MerchantRequestID: number
   product: number
+  ResultCode: number
   _all: number
 }
 
@@ -86,6 +89,7 @@ export type PurchasedProductMinAggregateInputType = {
   Location?: true
   MerchantRequestID?: true
   product?: true
+  ResultCode?: true
 }
 
 export type PurchasedProductMaxAggregateInputType = {
@@ -97,6 +101,7 @@ export type PurchasedProductMaxAggregateInputType = {
   Location?: true
   MerchantRequestID?: true
   product?: true
+  ResultCode?: true
 }
 
 export type PurchasedProductCountAggregateInputType = {
@@ -108,6 +113,7 @@ export type PurchasedProductCountAggregateInputType = {
   Location?: true
   MerchantRequestID?: true
   product?: true
+  ResultCode?: true
   _all?: true
 }
 
@@ -206,6 +212,7 @@ export type PurchasedProductGroupByOutputType = {
   Location: string
   MerchantRequestID: string
   product: string
+  ResultCode: string
   _count: PurchasedProductCountAggregateOutputType | null
   _avg: PurchasedProductAvgAggregateOutputType | null
   _sum: PurchasedProductSumAggregateOutputType | null
@@ -240,6 +247,7 @@ export type PurchasedProductWhereInput = {
   Location?: Prisma.StringFilter<"PurchasedProduct"> | string
   MerchantRequestID?: Prisma.StringFilter<"PurchasedProduct"> | string
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
+  ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }
 
@@ -252,6 +260,7 @@ export type PurchasedProductOrderByWithRelationInput = {
   Location?: Prisma.SortOrder
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
+  ResultCode?: Prisma.SortOrder
   purchasedId?: Prisma.ProductsOrderByWithRelationInput
   _relevance?: Prisma.PurchasedProductOrderByRelevanceInput
 }
@@ -268,6 +277,7 @@ export type PurchasedProductWhereUniqueInput = Prisma.AtLeast<{
   Location?: Prisma.StringFilter<"PurchasedProduct"> | string
   MerchantRequestID?: Prisma.StringFilter<"PurchasedProduct"> | string
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
+  ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }, "acquiredId">
 
@@ -280,6 +290,7 @@ export type PurchasedProductOrderByWithAggregationInput = {
   Location?: Prisma.SortOrder
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
+  ResultCode?: Prisma.SortOrder
   _count?: Prisma.PurchasedProductCountOrderByAggregateInput
   _avg?: Prisma.PurchasedProductAvgOrderByAggregateInput
   _max?: Prisma.PurchasedProductMaxOrderByAggregateInput
@@ -299,6 +310,7 @@ export type PurchasedProductScalarWhereWithAggregatesInput = {
   Location?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
   MerchantRequestID?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
   product?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
+  ResultCode?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
 }
 
 export type PurchasedProductCreateInput = {
@@ -309,6 +321,7 @@ export type PurchasedProductCreateInput = {
   Amount?: number
   Location: string
   MerchantRequestID?: string
+  ResultCode?: string
   purchasedId: Prisma.ProductsCreateNestedOneWithoutPurchasedInput
 }
 
@@ -321,6 +334,7 @@ export type PurchasedProductUncheckedCreateInput = {
   Location: string
   MerchantRequestID?: string
   product: string
+  ResultCode?: string
 }
 
 export type PurchasedProductUpdateInput = {
@@ -331,6 +345,7 @@ export type PurchasedProductUpdateInput = {
   Amount?: Prisma.IntFieldUpdateOperationsInput | number
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
   purchasedId?: Prisma.ProductsUpdateOneRequiredWithoutPurchasedNestedInput
 }
 
@@ -343,6 +358,7 @@ export type PurchasedProductUncheckedUpdateInput = {
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
   product?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductCreateManyInput = {
@@ -354,6 +370,7 @@ export type PurchasedProductCreateManyInput = {
   Location: string
   MerchantRequestID?: string
   product: string
+  ResultCode?: string
 }
 
 export type PurchasedProductUpdateManyMutationInput = {
@@ -364,6 +381,7 @@ export type PurchasedProductUpdateManyMutationInput = {
   Amount?: Prisma.IntFieldUpdateOperationsInput | number
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductUncheckedUpdateManyInput = {
@@ -375,6 +393,7 @@ export type PurchasedProductUncheckedUpdateManyInput = {
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
   product?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductListRelationFilter = {
@@ -402,6 +421,7 @@ export type PurchasedProductCountOrderByAggregateInput = {
   Location?: Prisma.SortOrder
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
+  ResultCode?: Prisma.SortOrder
 }
 
 export type PurchasedProductAvgOrderByAggregateInput = {
@@ -417,6 +437,7 @@ export type PurchasedProductMaxOrderByAggregateInput = {
   Location?: Prisma.SortOrder
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
+  ResultCode?: Prisma.SortOrder
 }
 
 export type PurchasedProductMinOrderByAggregateInput = {
@@ -428,6 +449,7 @@ export type PurchasedProductMinOrderByAggregateInput = {
   Location?: Prisma.SortOrder
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
+  ResultCode?: Prisma.SortOrder
 }
 
 export type PurchasedProductSumOrderByAggregateInput = {
@@ -484,6 +506,7 @@ export type PurchasedProductCreateWithoutPurchasedIdInput = {
   Amount?: number
   Location: string
   MerchantRequestID?: string
+  ResultCode?: string
 }
 
 export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
@@ -494,6 +517,7 @@ export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
   Amount?: number
   Location: string
   MerchantRequestID?: string
+  ResultCode?: string
 }
 
 export type PurchasedProductCreateOrConnectWithoutPurchasedIdInput = {
@@ -534,6 +558,7 @@ export type PurchasedProductScalarWhereInput = {
   Location?: Prisma.StringFilter<"PurchasedProduct"> | string
   MerchantRequestID?: Prisma.StringFilter<"PurchasedProduct"> | string
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
+  ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
 }
 
 export type PurchasedProductCreateManyPurchasedIdInput = {
@@ -544,6 +569,7 @@ export type PurchasedProductCreateManyPurchasedIdInput = {
   Amount?: number
   Location: string
   MerchantRequestID?: string
+  ResultCode?: string
 }
 
 export type PurchasedProductUpdateWithoutPurchasedIdInput = {
@@ -554,6 +580,7 @@ export type PurchasedProductUpdateWithoutPurchasedIdInput = {
   Amount?: Prisma.IntFieldUpdateOperationsInput | number
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
@@ -564,6 +591,7 @@ export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
   Amount?: Prisma.IntFieldUpdateOperationsInput | number
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
@@ -574,6 +602,7 @@ export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
   Amount?: Prisma.IntFieldUpdateOperationsInput | number
   Location?: Prisma.StringFieldUpdateOperationsInput | string
   MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -587,6 +616,7 @@ export type PurchasedProductSelect<ExtArgs extends runtime.Types.Extensions.Inte
   Location?: boolean
   MerchantRequestID?: boolean
   product?: boolean
+  ResultCode?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
@@ -599,6 +629,7 @@ export type PurchasedProductSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
   Location?: boolean
   MerchantRequestID?: boolean
   product?: boolean
+  ResultCode?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
@@ -611,6 +642,7 @@ export type PurchasedProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
   Location?: boolean
   MerchantRequestID?: boolean
   product?: boolean
+  ResultCode?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
@@ -623,9 +655,10 @@ export type PurchasedProductSelectScalar = {
   Location?: boolean
   MerchantRequestID?: boolean
   product?: boolean
+  ResultCode?: boolean
 }
 
-export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product", ExtArgs["result"]["purchasedProduct"]>
+export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product" | "ResultCode", ExtArgs["result"]["purchasedProduct"]>
 export type PurchasedProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }
@@ -650,6 +683,7 @@ export type $PurchasedProductPayload<ExtArgs extends runtime.Types.Extensions.In
     Location: string
     MerchantRequestID: string
     product: string
+    ResultCode: string
   }, ExtArgs["result"]["purchasedProduct"]>
   composites: {}
 }
@@ -1082,6 +1116,7 @@ export interface PurchasedProductFieldRefs {
   readonly Location: Prisma.FieldRef<"PurchasedProduct", 'String'>
   readonly MerchantRequestID: Prisma.FieldRef<"PurchasedProduct", 'String'>
   readonly product: Prisma.FieldRef<"PurchasedProduct", 'String'>
+  readonly ResultCode: Prisma.FieldRef<"PurchasedProduct", 'String'>
 }
     
 
