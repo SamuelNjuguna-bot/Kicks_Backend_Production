@@ -3,7 +3,6 @@ import { prisma } from "../../lib/prisma.js";
 import axios from "axios";
 import store from "node-persist";
 
-const userResponseUrl = "http://localhost:3000/checkpaymentstatus";
 store.init();
 interface token {
   token: String;
