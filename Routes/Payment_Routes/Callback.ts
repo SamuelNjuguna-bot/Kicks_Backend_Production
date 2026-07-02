@@ -30,7 +30,6 @@ export const handleCompletePayment = async (
         ResultCode
       },
       })
-      console.log(purchased)
     if (purchased) {
       res.json("ok saf");
       return;
