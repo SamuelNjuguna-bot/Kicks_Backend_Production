@@ -1,11 +1,17 @@
 import axios from "axios";
 import type { Request, Response, NextFunction } from "express";
 export type RequestExtended = Request & { token?: string };
+
+ 
 export const generateToken = async (
   req: RequestExtended,
   _res: Response,
   next: NextFunction,
 ) => {
+  const {payload} = req.body
+  if(!payload){
+    return
+  }
   const CONSUMER_KEY = process.env.MPESA_CONSUMER_KEY as string;
   const CONSUMER_SECRET = process.env.MPESA_CONSUMER_SECRET as string;
   const URL =
