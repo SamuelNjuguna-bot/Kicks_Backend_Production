@@ -9,8 +9,7 @@ export const checkStatus = async (req: Request, res: Response) => {
         MerchantRequestID:MerchantID
       }
     })
-  const code =completedTransaction?.ResultCode
- 
+  const code =completedTransaction?.ResultCode 
   if(code!=="0"){
         res.status(500).json({
       message:
