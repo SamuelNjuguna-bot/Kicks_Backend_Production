@@ -1,6 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
 import { prisma } from "../../lib/prisma.js";
-import axios from "axios";
 export const handleCompletePayment = async (
   req: Request,
   res: Response,
