@@ -8,8 +8,8 @@ export const generateToken = async (
   _res: Response,
   next: NextFunction,
 ) => {
-  const {payload} = req.body
-  if(!payload){
+  const {phone, price, product_Name, location, itemId} = req.body
+  if(!phone || !price || !product_Name){
     return
   }
   const CONSUMER_KEY = process.env.MPESA_CONSUMER_KEY as string;
