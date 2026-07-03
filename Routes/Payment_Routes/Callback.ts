@@ -13,9 +13,7 @@ export const handleCompletePayment = async (
   const TransactionString = dat[1].Value;
   const Amount = dat[0].Value;
   const { location, itemId } = req.params as unknown as any;
-  if (ResultCode!=="0") {
-    return;
-  }
+ 
   try {
       const purchased = await prisma.purchasedProduct.create({ 
          data: {
