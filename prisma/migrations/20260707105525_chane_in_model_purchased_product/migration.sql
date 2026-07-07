@@ -1,0 +1,7 @@
+-- AlterTable
+ALTER TABLE "PurchasedProduct" ALTER COLUMN "productId" DROP NOT NULL,
+ALTER COLUMN "TransactionString" DROP NOT NULL,
+ALTER COLUMN "PhoneNumber" DROP NOT NULL,
+ALTER COLUMN "Location" DROP NOT NULL,
+ALTER COLUMN "Amount" DROP NOT NULL,
+ALTER COLUMN "MerchantRequestID" DROP NOT NULL;

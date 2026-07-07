@@ -47,13 +47,13 @@ model CartItems{
 
 
 model PurchasedProduct{
-  acquiredId String  @id @default(uuid())
-  productId String 
-  TransactionString String
-  PhoneNumber String
-  Amount Int @default(200)
-  Location String
-  MerchantRequestID String  @default("merchant")
+  acquiredId String @id @default(uuid()) 
+  productId String? 
+  TransactionString String?
+  PhoneNumber String?
+  Amount Int? @default(200)
+  Location String?
+  MerchantRequestID String?  @default("merchant")
   product String
   purchasedId Products @relation(fields: [product] , references: [id])
   ResultCode String @default(" ")

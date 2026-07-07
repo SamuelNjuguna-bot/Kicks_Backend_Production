@@ -17,8 +17,8 @@
 
 import * as runtime from "@prisma/client/runtime/index-browser"
 
-export type * from '../models.js'
-export type * from './prismaNamespace.js'
+export type * from '../models.ts'
+export type * from './prismaNamespace.ts'
 
 export const Decimal = runtime.Decimal
 
@@ -173,6 +173,14 @@ export const CartItemsOrderByRelevanceFieldEnum = {
 } as const
 
 export type CartItemsOrderByRelevanceFieldEnum = (typeof CartItemsOrderByRelevanceFieldEnum)[keyof typeof CartItemsOrderByRelevanceFieldEnum]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 export const PurchasedProductOrderByRelevanceFieldEnum = {

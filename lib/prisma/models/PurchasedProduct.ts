@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums.ts"
+import type * as Prisma from "../internal/prismaNamespace.ts"
 
 /**
  * Model PurchasedProduct
@@ -205,12 +205,12 @@ export type PurchasedProductGroupByArgs<ExtArgs extends runtime.Types.Extensions
 
 export type PurchasedProductGroupByOutputType = {
   acquiredId: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount: number
-  Location: string
-  MerchantRequestID: string
+  productId: string | null
+  TransactionString: string | null
+  PhoneNumber: string | null
+  Amount: number | null
+  Location: string | null
+  MerchantRequestID: string | null
   product: string
   ResultCode: string
   _count: PurchasedProductCountAggregateOutputType | null
@@ -240,12 +240,12 @@ export type PurchasedProductWhereInput = {
   OR?: Prisma.PurchasedProductWhereInput[]
   NOT?: Prisma.PurchasedProductWhereInput | Prisma.PurchasedProductWhereInput[]
   acquiredId?: Prisma.StringFilter<"PurchasedProduct"> | string
-  productId?: Prisma.StringFilter<"PurchasedProduct"> | string
-  TransactionString?: Prisma.StringFilter<"PurchasedProduct"> | string
-  PhoneNumber?: Prisma.StringFilter<"PurchasedProduct"> | string
-  Amount?: Prisma.IntFilter<"PurchasedProduct"> | number
-  Location?: Prisma.StringFilter<"PurchasedProduct"> | string
-  MerchantRequestID?: Prisma.StringFilter<"PurchasedProduct"> | string
+  productId?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  TransactionString?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  PhoneNumber?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  Amount?: Prisma.IntNullableFilter<"PurchasedProduct"> | number | null
+  Location?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
@@ -253,12 +253,12 @@ export type PurchasedProductWhereInput = {
 
 export type PurchasedProductOrderByWithRelationInput = {
   acquiredId?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
-  TransactionString?: Prisma.SortOrder
-  PhoneNumber?: Prisma.SortOrder
-  Amount?: Prisma.SortOrder
-  Location?: Prisma.SortOrder
-  MerchantRequestID?: Prisma.SortOrder
+  productId?: Prisma.SortOrderInput | Prisma.SortOrder
+  TransactionString?: Prisma.SortOrderInput | Prisma.SortOrder
+  PhoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  Amount?: Prisma.SortOrderInput | Prisma.SortOrder
+  Location?: Prisma.SortOrderInput | Prisma.SortOrder
+  MerchantRequestID?: Prisma.SortOrderInput | Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
   purchasedId?: Prisma.ProductsOrderByWithRelationInput
@@ -270,12 +270,12 @@ export type PurchasedProductWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.PurchasedProductWhereInput | Prisma.PurchasedProductWhereInput[]
   OR?: Prisma.PurchasedProductWhereInput[]
   NOT?: Prisma.PurchasedProductWhereInput | Prisma.PurchasedProductWhereInput[]
-  productId?: Prisma.StringFilter<"PurchasedProduct"> | string
-  TransactionString?: Prisma.StringFilter<"PurchasedProduct"> | string
-  PhoneNumber?: Prisma.StringFilter<"PurchasedProduct"> | string
-  Amount?: Prisma.IntFilter<"PurchasedProduct"> | number
-  Location?: Prisma.StringFilter<"PurchasedProduct"> | string
-  MerchantRequestID?: Prisma.StringFilter<"PurchasedProduct"> | string
+  productId?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  TransactionString?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  PhoneNumber?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  Amount?: Prisma.IntNullableFilter<"PurchasedProduct"> | number | null
+  Location?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
@@ -283,12 +283,12 @@ export type PurchasedProductWhereUniqueInput = Prisma.AtLeast<{
 
 export type PurchasedProductOrderByWithAggregationInput = {
   acquiredId?: Prisma.SortOrder
-  productId?: Prisma.SortOrder
-  TransactionString?: Prisma.SortOrder
-  PhoneNumber?: Prisma.SortOrder
-  Amount?: Prisma.SortOrder
-  Location?: Prisma.SortOrder
-  MerchantRequestID?: Prisma.SortOrder
+  productId?: Prisma.SortOrderInput | Prisma.SortOrder
+  TransactionString?: Prisma.SortOrderInput | Prisma.SortOrder
+  PhoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
+  Amount?: Prisma.SortOrderInput | Prisma.SortOrder
+  Location?: Prisma.SortOrderInput | Prisma.SortOrder
+  MerchantRequestID?: Prisma.SortOrderInput | Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
   _count?: Prisma.PurchasedProductCountOrderByAggregateInput
@@ -303,95 +303,95 @@ export type PurchasedProductScalarWhereWithAggregatesInput = {
   OR?: Prisma.PurchasedProductScalarWhereWithAggregatesInput[]
   NOT?: Prisma.PurchasedProductScalarWhereWithAggregatesInput | Prisma.PurchasedProductScalarWhereWithAggregatesInput[]
   acquiredId?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
-  productId?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
-  TransactionString?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
-  PhoneNumber?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
-  Amount?: Prisma.IntWithAggregatesFilter<"PurchasedProduct"> | number
-  Location?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
-  MerchantRequestID?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
+  productId?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
+  TransactionString?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
+  PhoneNumber?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
+  Amount?: Prisma.IntNullableWithAggregatesFilter<"PurchasedProduct"> | number | null
+  Location?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
+  MerchantRequestID?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
 }
 
 export type PurchasedProductCreateInput = {
   acquiredId?: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount?: number
-  Location: string
-  MerchantRequestID?: string
+  productId?: string | null
+  TransactionString?: string | null
+  PhoneNumber?: string | null
+  Amount?: number | null
+  Location?: string | null
+  MerchantRequestID?: string | null
   ResultCode?: string
   purchasedId: Prisma.ProductsCreateNestedOneWithoutPurchasedInput
 }
 
 export type PurchasedProductUncheckedCreateInput = {
   acquiredId?: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount?: number
-  Location: string
-  MerchantRequestID?: string
+  productId?: string | null
+  TransactionString?: string | null
+  PhoneNumber?: string | null
+  Amount?: number | null
+  Location?: string | null
+  MerchantRequestID?: string | null
   product: string
   ResultCode?: string
 }
 
 export type PurchasedProductUpdateInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
   purchasedId?: Prisma.ProductsUpdateOneRequiredWithoutPurchasedNestedInput
 }
 
 export type PurchasedProductUncheckedUpdateInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductCreateManyInput = {
   acquiredId?: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount?: number
-  Location: string
-  MerchantRequestID?: string
+  productId?: string | null
+  TransactionString?: string | null
+  PhoneNumber?: string | null
+  Amount?: number | null
+  Location?: string | null
+  MerchantRequestID?: string | null
   product: string
   ResultCode?: string
 }
 
 export type PurchasedProductUpdateManyMutationInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductUncheckedUpdateManyInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
@@ -498,25 +498,37 @@ export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdNestedInput = {
   deleteMany?: Prisma.PurchasedProductScalarWhereInput | Prisma.PurchasedProductScalarWhereInput[]
 }
 
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
+export type NullableIntFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type PurchasedProductCreateWithoutPurchasedIdInput = {
   acquiredId?: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount?: number
-  Location: string
-  MerchantRequestID?: string
+  productId?: string | null
+  TransactionString?: string | null
+  PhoneNumber?: string | null
+  Amount?: number | null
+  Location?: string | null
+  MerchantRequestID?: string | null
   ResultCode?: string
 }
 
 export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
   acquiredId?: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount?: number
-  Location: string
-  MerchantRequestID?: string
+  productId?: string | null
+  TransactionString?: string | null
+  PhoneNumber?: string | null
+  Amount?: number | null
+  Location?: string | null
+  MerchantRequestID?: string | null
   ResultCode?: string
 }
 
@@ -551,57 +563,57 @@ export type PurchasedProductScalarWhereInput = {
   OR?: Prisma.PurchasedProductScalarWhereInput[]
   NOT?: Prisma.PurchasedProductScalarWhereInput | Prisma.PurchasedProductScalarWhereInput[]
   acquiredId?: Prisma.StringFilter<"PurchasedProduct"> | string
-  productId?: Prisma.StringFilter<"PurchasedProduct"> | string
-  TransactionString?: Prisma.StringFilter<"PurchasedProduct"> | string
-  PhoneNumber?: Prisma.StringFilter<"PurchasedProduct"> | string
-  Amount?: Prisma.IntFilter<"PurchasedProduct"> | number
-  Location?: Prisma.StringFilter<"PurchasedProduct"> | string
-  MerchantRequestID?: Prisma.StringFilter<"PurchasedProduct"> | string
+  productId?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  TransactionString?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  PhoneNumber?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  Amount?: Prisma.IntNullableFilter<"PurchasedProduct"> | number | null
+  Location?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
+  MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
 }
 
 export type PurchasedProductCreateManyPurchasedIdInput = {
   acquiredId?: string
-  productId: string
-  TransactionString: string
-  PhoneNumber: string
-  Amount?: number
-  Location: string
-  MerchantRequestID?: string
+  productId?: string | null
+  TransactionString?: string | null
+  PhoneNumber?: string | null
+  Amount?: number | null
+  Location?: string | null
+  MerchantRequestID?: string | null
   ResultCode?: string
 }
 
 export type PurchasedProductUpdateWithoutPurchasedIdInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
   acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.StringFieldUpdateOperationsInput | string
-  TransactionString?: Prisma.StringFieldUpdateOperationsInput | string
-  PhoneNumber?: Prisma.StringFieldUpdateOperationsInput | string
-  Amount?: Prisma.IntFieldUpdateOperationsInput | number
-  Location?: Prisma.StringFieldUpdateOperationsInput | string
-  MerchantRequestID?: Prisma.StringFieldUpdateOperationsInput | string
+  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
@@ -676,12 +688,12 @@ export type $PurchasedProductPayload<ExtArgs extends runtime.Types.Extensions.In
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     acquiredId: string
-    productId: string
-    TransactionString: string
-    PhoneNumber: string
-    Amount: number
-    Location: string
-    MerchantRequestID: string
+    productId: string | null
+    TransactionString: string | null
+    PhoneNumber: string | null
+    Amount: number | null
+    Location: string | null
+    MerchantRequestID: string | null
     product: string
     ResultCode: string
   }, ExtArgs["result"]["purchasedProduct"]>
