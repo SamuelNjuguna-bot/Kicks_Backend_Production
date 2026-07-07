@@ -36,7 +36,6 @@ export const handleCompletePayment = async (
 
   }
   else{
-    console.log(ResultCode)
     const notPurchased = await prisma.purchasedProduct.create({
       data:{
         ResultCode,
@@ -44,7 +43,6 @@ export const handleCompletePayment = async (
         product:itemId
       }
     })
-    console.log(notPurchased)
     if (notPurchased) {
       res.json("ok saf");
       return;

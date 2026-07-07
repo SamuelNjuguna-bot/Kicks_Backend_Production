@@ -4,7 +4,6 @@ import { prisma } from "../../lib/prisma.js";
 export const fetchPurchased = async (req: Request, res: Response) => {
   try {
     const { PhoneNumber } = req.body;
-    console.log(PhoneNumber)
     const product = await prisma.purchasedProduct.findMany({
       where: { PhoneNumber },
       include: {
