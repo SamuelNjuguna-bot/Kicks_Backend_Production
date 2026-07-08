@@ -42,9 +42,10 @@ model CartItems{
   color String  
   Quantity Int @default(1)
   size String @default("1")
+  viewCart Boolean  @default(false) 
+  show_cart String @unique @default("")
+  show_cart_link PurchasedProduct @relation(fields: [show_cart], references: [acquiredId])
 }
-
-
 
 model PurchasedProduct{
   acquiredId String @id @default(uuid()) 
@@ -57,4 +58,5 @@ model PurchasedProduct{
   product String
   purchasedId Products @relation(fields: [product] , references: [id])
   ResultCode String @default(" ")
+  showCart CartItems[]
 }

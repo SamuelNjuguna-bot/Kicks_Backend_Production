@@ -104,7 +104,9 @@ export const CartItemsScalarFieldEnum = {
   total_Amount: 'total_Amount',
   color: 'color',
   Quantity: 'Quantity',
-  size: 'size'
+  size: 'size',
+  viewCart: 'viewCart',
+  show_cart: 'show_cart'
 } as const
 
 export type CartItemsScalarFieldEnum = (typeof CartItemsScalarFieldEnum)[keyof typeof CartItemsScalarFieldEnum]
@@ -169,7 +171,8 @@ export const CartItemsOrderByRelevanceFieldEnum = {
   productId: 'productId',
   userId: 'userId',
   color: 'color',
-  size: 'size'
+  size: 'size',
+  show_cart: 'show_cart'
 } as const
 
 export type CartItemsOrderByRelevanceFieldEnum = (typeof CartItemsOrderByRelevanceFieldEnum)[keyof typeof CartItemsOrderByRelevanceFieldEnum]

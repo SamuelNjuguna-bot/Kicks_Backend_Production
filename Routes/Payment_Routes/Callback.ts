@@ -16,6 +16,18 @@ export const handleCompletePayment = async (
   const PhoneNumber = String(data[4].Value);
   const TransactionString = data[1].Value;
   const Amount = data[0].Value;
+
+
+    await prisma.cartItems.update({
+      where:
+    {
+      productId:itemId
+    },
+    data:{
+      viewCart:true
+    }
+    })
+
       const purchased = await prisma.purchasedProduct.create({ 
 
          data: {
