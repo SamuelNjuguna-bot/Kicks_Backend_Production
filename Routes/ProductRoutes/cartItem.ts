@@ -25,6 +25,7 @@ export const cartItem = async (req: Request, res: Response) => {
         color,
         userId: id,
         Quantity: Total,
+        viewCart:false
       },
     });
     const userId = mycart.userId;
