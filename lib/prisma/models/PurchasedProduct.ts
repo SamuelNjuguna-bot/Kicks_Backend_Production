@@ -249,7 +249,6 @@ export type PurchasedProductWhereInput = {
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
-  showCart?: Prisma.CartItemsListRelationFilter
 }
 
 export type PurchasedProductOrderByWithRelationInput = {
@@ -263,7 +262,6 @@ export type PurchasedProductOrderByWithRelationInput = {
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
   purchasedId?: Prisma.ProductsOrderByWithRelationInput
-  showCart?: Prisma.CartItemsOrderByRelationAggregateInput
   _relevance?: Prisma.PurchasedProductOrderByRelevanceInput
 }
 
@@ -281,7 +279,6 @@ export type PurchasedProductWhereUniqueInput = Prisma.AtLeast<{
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
-  showCart?: Prisma.CartItemsListRelationFilter
 }, "acquiredId">
 
 export type PurchasedProductOrderByWithAggregationInput = {
@@ -324,9 +321,8 @@ export type PurchasedProductCreateInput = {
   Amount?: number | null
   Location?: string | null
   MerchantRequestID?: string | null
-  ResultCode?: string
+  ResultCode: string
   purchasedId: Prisma.ProductsCreateNestedOneWithoutPurchasedInput
-  showCart?: Prisma.CartItemsCreateNestedManyWithoutShow_cart_linkInput
 }
 
 export type PurchasedProductUncheckedCreateInput = {
@@ -338,8 +334,7 @@ export type PurchasedProductUncheckedCreateInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   product: string
-  ResultCode?: string
-  showCart?: Prisma.CartItemsUncheckedCreateNestedManyWithoutShow_cart_linkInput
+  ResultCode: string
 }
 
 export type PurchasedProductUpdateInput = {
@@ -352,7 +347,6 @@ export type PurchasedProductUpdateInput = {
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
   purchasedId?: Prisma.ProductsUpdateOneRequiredWithoutPurchasedNestedInput
-  showCart?: Prisma.CartItemsUpdateManyWithoutShow_cart_linkNestedInput
 }
 
 export type PurchasedProductUncheckedUpdateInput = {
@@ -365,7 +359,6 @@ export type PurchasedProductUncheckedUpdateInput = {
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
-  showCart?: Prisma.CartItemsUncheckedUpdateManyWithoutShow_cart_linkNestedInput
 }
 
 export type PurchasedProductCreateManyInput = {
@@ -377,7 +370,7 @@ export type PurchasedProductCreateManyInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   product: string
-  ResultCode?: string
+  ResultCode: string
 }
 
 export type PurchasedProductUpdateManyMutationInput = {
@@ -411,11 +404,6 @@ export type PurchasedProductListRelationFilter = {
 
 export type PurchasedProductOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
-}
-
-export type PurchasedProductScalarRelationFilter = {
-  is?: Prisma.PurchasedProductWhereInput
-  isNot?: Prisma.PurchasedProductWhereInput
 }
 
 export type PurchasedProductOrderByRelevanceInput = {
@@ -510,20 +498,6 @@ export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdNestedInput = {
   deleteMany?: Prisma.PurchasedProductScalarWhereInput | Prisma.PurchasedProductScalarWhereInput[]
 }
 
-export type PurchasedProductCreateNestedOneWithoutShowCartInput = {
-  create?: Prisma.XOR<Prisma.PurchasedProductCreateWithoutShowCartInput, Prisma.PurchasedProductUncheckedCreateWithoutShowCartInput>
-  connectOrCreate?: Prisma.PurchasedProductCreateOrConnectWithoutShowCartInput
-  connect?: Prisma.PurchasedProductWhereUniqueInput
-}
-
-export type PurchasedProductUpdateOneRequiredWithoutShowCartNestedInput = {
-  create?: Prisma.XOR<Prisma.PurchasedProductCreateWithoutShowCartInput, Prisma.PurchasedProductUncheckedCreateWithoutShowCartInput>
-  connectOrCreate?: Prisma.PurchasedProductCreateOrConnectWithoutShowCartInput
-  upsert?: Prisma.PurchasedProductUpsertWithoutShowCartInput
-  connect?: Prisma.PurchasedProductWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PurchasedProductUpdateToOneWithWhereWithoutShowCartInput, Prisma.PurchasedProductUpdateWithoutShowCartInput>, Prisma.PurchasedProductUncheckedUpdateWithoutShowCartInput>
-}
-
 export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
 }
@@ -544,8 +518,7 @@ export type PurchasedProductCreateWithoutPurchasedIdInput = {
   Amount?: number | null
   Location?: string | null
   MerchantRequestID?: string | null
-  ResultCode?: string
-  showCart?: Prisma.CartItemsCreateNestedManyWithoutShow_cart_linkInput
+  ResultCode: string
 }
 
 export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
@@ -556,8 +529,7 @@ export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
   Amount?: number | null
   Location?: string | null
   MerchantRequestID?: string | null
-  ResultCode?: string
-  showCart?: Prisma.CartItemsUncheckedCreateNestedManyWithoutShow_cart_linkInput
+  ResultCode: string
 }
 
 export type PurchasedProductCreateOrConnectWithoutPurchasedIdInput = {
@@ -601,70 +573,6 @@ export type PurchasedProductScalarWhereInput = {
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
 }
 
-export type PurchasedProductCreateWithoutShowCartInput = {
-  acquiredId?: string
-  productId?: string | null
-  TransactionString?: string | null
-  PhoneNumber?: string | null
-  Amount?: number | null
-  Location?: string | null
-  MerchantRequestID?: string | null
-  ResultCode?: string
-  purchasedId: Prisma.ProductsCreateNestedOneWithoutPurchasedInput
-}
-
-export type PurchasedProductUncheckedCreateWithoutShowCartInput = {
-  acquiredId?: string
-  productId?: string | null
-  TransactionString?: string | null
-  PhoneNumber?: string | null
-  Amount?: number | null
-  Location?: string | null
-  MerchantRequestID?: string | null
-  product: string
-  ResultCode?: string
-}
-
-export type PurchasedProductCreateOrConnectWithoutShowCartInput = {
-  where: Prisma.PurchasedProductWhereUniqueInput
-  create: Prisma.XOR<Prisma.PurchasedProductCreateWithoutShowCartInput, Prisma.PurchasedProductUncheckedCreateWithoutShowCartInput>
-}
-
-export type PurchasedProductUpsertWithoutShowCartInput = {
-  update: Prisma.XOR<Prisma.PurchasedProductUpdateWithoutShowCartInput, Prisma.PurchasedProductUncheckedUpdateWithoutShowCartInput>
-  create: Prisma.XOR<Prisma.PurchasedProductCreateWithoutShowCartInput, Prisma.PurchasedProductUncheckedCreateWithoutShowCartInput>
-  where?: Prisma.PurchasedProductWhereInput
-}
-
-export type PurchasedProductUpdateToOneWithWhereWithoutShowCartInput = {
-  where?: Prisma.PurchasedProductWhereInput
-  data: Prisma.XOR<Prisma.PurchasedProductUpdateWithoutShowCartInput, Prisma.PurchasedProductUncheckedUpdateWithoutShowCartInput>
-}
-
-export type PurchasedProductUpdateWithoutShowCartInput = {
-  acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
-  purchasedId?: Prisma.ProductsUpdateOneRequiredWithoutPurchasedNestedInput
-}
-
-export type PurchasedProductUncheckedUpdateWithoutShowCartInput = {
-  acquiredId?: Prisma.StringFieldUpdateOperationsInput | string
-  productId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  TransactionString?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  PhoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  Amount?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  product?: Prisma.StringFieldUpdateOperationsInput | string
-  ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
-}
-
 export type PurchasedProductCreateManyPurchasedIdInput = {
   acquiredId?: string
   productId?: string | null
@@ -673,7 +581,7 @@ export type PurchasedProductCreateManyPurchasedIdInput = {
   Amount?: number | null
   Location?: string | null
   MerchantRequestID?: string | null
-  ResultCode?: string
+  ResultCode: string
 }
 
 export type PurchasedProductUpdateWithoutPurchasedIdInput = {
@@ -685,7 +593,6 @@ export type PurchasedProductUpdateWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
-  showCart?: Prisma.CartItemsUpdateManyWithoutShow_cart_linkNestedInput
 }
 
 export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
@@ -697,7 +604,6 @@ export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
-  showCart?: Prisma.CartItemsUncheckedUpdateManyWithoutShow_cart_linkNestedInput
 }
 
 export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
@@ -712,35 +618,6 @@ export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
 }
 
 
-/**
- * Count Type PurchasedProductCountOutputType
- */
-
-export type PurchasedProductCountOutputType = {
-  showCart: number
-}
-
-export type PurchasedProductCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  showCart?: boolean | PurchasedProductCountOutputTypeCountShowCartArgs
-}
-
-/**
- * PurchasedProductCountOutputType without action
- */
-export type PurchasedProductCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PurchasedProductCountOutputType
-   */
-  select?: Prisma.PurchasedProductCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * PurchasedProductCountOutputType without action
- */
-export type PurchasedProductCountOutputTypeCountShowCartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CartItemsWhereInput
-}
-
 
 export type PurchasedProductSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   acquiredId?: boolean
@@ -753,8 +630,6 @@ export type PurchasedProductSelect<ExtArgs extends runtime.Types.Extensions.Inte
   product?: boolean
   ResultCode?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
-  showCart?: boolean | Prisma.PurchasedProduct$showCartArgs<ExtArgs>
-  _count?: boolean | Prisma.PurchasedProductCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
 export type PurchasedProductSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -798,8 +673,6 @@ export type PurchasedProductSelectScalar = {
 export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product" | "ResultCode", ExtArgs["result"]["purchasedProduct"]>
 export type PurchasedProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
-  showCart?: boolean | Prisma.PurchasedProduct$showCartArgs<ExtArgs>
-  _count?: boolean | Prisma.PurchasedProductCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type PurchasedProductIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
@@ -812,7 +685,6 @@ export type $PurchasedProductPayload<ExtArgs extends runtime.Types.Extensions.In
   name: "PurchasedProduct"
   objects: {
     purchasedId: Prisma.$ProductsPayload<ExtArgs>
-    showCart: Prisma.$CartItemsPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     acquiredId: string
@@ -1219,7 +1091,6 @@ readonly fields: PurchasedProductFieldRefs;
 export interface Prisma__PurchasedProductClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   purchasedId<T extends Prisma.ProductsDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ProductsDefaultArgs<ExtArgs>>): Prisma.Prisma__ProductsClient<runtime.Types.Result.GetResult<Prisma.$ProductsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  showCart<T extends Prisma.PurchasedProduct$showCartArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PurchasedProduct$showCartArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CartItemsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1656,30 +1527,6 @@ export type PurchasedProductDeleteManyArgs<ExtArgs extends runtime.Types.Extensi
    * Limit how many PurchasedProducts to delete.
    */
   limit?: number
-}
-
-/**
- * PurchasedProduct.showCart
- */
-export type PurchasedProduct$showCartArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the CartItems
-   */
-  select?: Prisma.CartItemsSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the CartItems
-   */
-  omit?: Prisma.CartItemsOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.CartItemsInclude<ExtArgs> | null
-  where?: Prisma.CartItemsWhereInput
-  orderBy?: Prisma.CartItemsOrderByWithRelationInput | Prisma.CartItemsOrderByWithRelationInput[]
-  cursor?: Prisma.CartItemsWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.CartItemsScalarFieldEnum | Prisma.CartItemsScalarFieldEnum[]
 }
 
 /**

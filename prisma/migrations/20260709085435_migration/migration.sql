@@ -1,0 +1,8 @@
+-- AlterTable
+ALTER TABLE "CartItems" ALTER COLUMN "size" DROP DEFAULT,
+ALTER COLUMN "Quantity" DROP DEFAULT;
+
+-- AlterTable
+ALTER TABLE "PurchasedProduct" ALTER COLUMN "Amount" DROP DEFAULT,
+ALTER COLUMN "MerchantRequestID" DROP DEFAULT,
+ALTER COLUMN "ResultCode" DROP DEFAULT;

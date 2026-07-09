@@ -1,35 +1,31 @@
 import type { NextFunction, Request, Response } from "express";
 import { prisma } from "../../lib/prisma.js";
+import strict from "node:assert/strict";
 export const handleCompletePayment = async (
   req: Request,
   res: Response,
   next: NextFunction,
 ) => {
 
+
+
+  interface params{
+    location :string,
+    itemId:string
+  }
   try {
   const ResultCode = String(req.body.Body.stkCallback.ResultCode);
   const MerchantRequestID = req.body.Body.stkCallback.MerchantRequestID;
-  const { location, itemId } = req.params as unknown as any;
+  const { location, itemId }  = req.params as unknown as params
   if(ResultCode==="0"){
   const resultMetaData = req.body.Body.stkCallback.CallbackMetadata;
   const data = resultMetaData.Item;
   const PhoneNumber = String(data[4].Value);
-  const TransactionString = data[1].Value;
+  const TransactionString = data[1].Value as string;
   const Amount = data[0].Value;
 
 
-    await prisma.cartItems.update({
-      where:
-    {
-      productId:itemId
-    },
-    data:{
-      viewCart:true
-    }
-    })
-
-      const purchased = await prisma.purchasedProduct.create({ 
-
+  const purchased = await prisma.purchasedProduct.create({ 
          data: {
         productId: itemId,
         TransactionString,
@@ -41,6 +37,15 @@ export const handleCompletePayment = async (
         ResultCode
       },
       })
+ await prisma.cartItems.update({
+  where:{
+    productId:itemId
+  },
+  data:{
+    viewCart:true
+  }
+ })
+
  if (purchased) {
       res.json("ok saf");
       return;

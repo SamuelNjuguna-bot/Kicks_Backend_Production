@@ -36,16 +36,14 @@ model Products {
 
 model CartItems{
   cartId String @id @default(uuid())
-  productId String 
+  productId String @unique
   userId String 
   pId Products @relation(fields: [productId], references: [id])
   total_Amount Int
   color String  
-  Quantity Int @default(1)
-  size String @default("1")
+  Quantity Int
+  size String 
   viewCart Boolean  @default(false) 
-  show_cart String @unique @default("")
-  show_cart_link PurchasedProduct @relation(fields: [show_cart], references: [acquiredId])
 }
 
 model PurchasedProduct{
@@ -53,11 +51,10 @@ model PurchasedProduct{
   productId String? 
   TransactionString String?
   PhoneNumber String?
-  Amount Int? @default(200)
+  Amount Int? 
   Location String?
-  MerchantRequestID String?  @default("merchant")
+  MerchantRequestID String?
   product String
   purchasedId Products @relation(fields: [product] , references: [id])
-  ResultCode String @default(" ")
-  showCart CartItems[]
+  ResultCode String 
 }
