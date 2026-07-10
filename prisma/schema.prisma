@@ -43,7 +43,7 @@ model CartItems{
   color String  
   Quantity Int
   size String 
-  viewCart Boolean?  @default(false) 
+  viewCart Boolean?  
 }
 
 model PurchasedProduct{
