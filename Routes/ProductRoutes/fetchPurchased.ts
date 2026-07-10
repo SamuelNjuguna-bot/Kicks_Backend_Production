@@ -5,7 +5,6 @@ export const fetchPurchased = async (req: Request, res: Response) => {
   try {
     const { PhoneNumber } = req.body;
     const product = await prisma.purchasedProduct.findMany({
-      where: { PhoneNumber },
       include: {
         purchasedId: true,
       },
