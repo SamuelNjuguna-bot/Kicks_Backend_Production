@@ -17,16 +17,21 @@ export const cartItem = async (req: Request, res: Response) => {
       }
     };
     const newtotal = total()!;
-    const mycart = await prisma.cartItems.create({
-      data: {
+    const mycart = await prisma.cartItems.upsert({
+      where:{
+     productId:prodId
+      },
+      create: {
         productId: prodId,
         total_Amount: newtotal,
         size: Size,
         color,
         userId: id,
         Quantity: Total,
-        viewCart:false
       },
+      update:{
+      viewCart:false
+      }
     });
     const userId = mycart.userId;
     res.status(201).json({ userId, Total });
