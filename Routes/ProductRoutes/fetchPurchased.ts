@@ -4,20 +4,11 @@ import { prisma } from "../../lib/prisma.js";
 export const fetchPurchased = async (req: Request, res: Response) => {
   try {
     const { PhoneNumber } = req.body;
-    const results = await prisma.purchasedProduct.findMany({
+    const product = await prisma.purchasedProduct.findMany({
       include: {
         purchasedId: true,
       },
     });
- 
-
-
-    const product = results.filter((prod)=>{
-      return prod.PhoneNumber ===PhoneNumber
-    })
-
-
-
     res.status(200).json([product]);
   } catch (e) {
     res.status(500).json({ message: "An Error Occurred please try again" });
