@@ -14,7 +14,7 @@ import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
  * Model PurchasedProduct
- * 
+ *j
  */
 export type PurchasedProductModel = runtime.Types.Result.DefaultSelection<Prisma.$PurchasedProductPayload>
 

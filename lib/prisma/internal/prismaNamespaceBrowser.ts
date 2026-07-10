@@ -165,6 +165,14 @@ export const ProductsOrderByRelevanceFieldEnum = {
 export type ProductsOrderByRelevanceFieldEnum = (typeof ProductsOrderByRelevanceFieldEnum)[keyof typeof ProductsOrderByRelevanceFieldEnum]
 
 
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
 export const CartItemsOrderByRelevanceFieldEnum = {
   cartId: 'cartId',
   productId: 'productId',
@@ -174,14 +182,6 @@ export const CartItemsOrderByRelevanceFieldEnum = {
 } as const
 
 export type CartItemsOrderByRelevanceFieldEnum = (typeof CartItemsOrderByRelevanceFieldEnum)[keyof typeof CartItemsOrderByRelevanceFieldEnum]
-
-
-export const NullsOrder = {
-  first: 'first',
-  last: 'last'
-} as const
-
-export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 export const PurchasedProductOrderByRelevanceFieldEnum = {

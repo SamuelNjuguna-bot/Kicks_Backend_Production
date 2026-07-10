@@ -209,7 +209,7 @@ export type CartItemsGroupByOutputType = {
   color: string
   Quantity: number
   size: string
-  viewCart: boolean
+  viewCart: boolean | null
   _count: CartItemsCountAggregateOutputType | null
   _avg: CartItemsAvgAggregateOutputType | null
   _sum: CartItemsSumAggregateOutputType | null
@@ -243,7 +243,7 @@ export type CartItemsWhereInput = {
   color?: Prisma.StringFilter<"CartItems"> | string
   Quantity?: Prisma.IntFilter<"CartItems"> | number
   size?: Prisma.StringFilter<"CartItems"> | string
-  viewCart?: Prisma.BoolFilter<"CartItems"> | boolean
+  viewCart?: Prisma.BoolNullableFilter<"CartItems"> | boolean | null
   pId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }
 
@@ -255,7 +255,7 @@ export type CartItemsOrderByWithRelationInput = {
   color?: Prisma.SortOrder
   Quantity?: Prisma.SortOrder
   size?: Prisma.SortOrder
-  viewCart?: Prisma.SortOrder
+  viewCart?: Prisma.SortOrderInput | Prisma.SortOrder
   pId?: Prisma.ProductsOrderByWithRelationInput
   _relevance?: Prisma.CartItemsOrderByRelevanceInput
 }
@@ -271,7 +271,7 @@ export type CartItemsWhereUniqueInput = Prisma.AtLeast<{
   color?: Prisma.StringFilter<"CartItems"> | string
   Quantity?: Prisma.IntFilter<"CartItems"> | number
   size?: Prisma.StringFilter<"CartItems"> | string
-  viewCart?: Prisma.BoolFilter<"CartItems"> | boolean
+  viewCart?: Prisma.BoolNullableFilter<"CartItems"> | boolean | null
   pId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }, "cartId" | "productId">
 
@@ -283,7 +283,7 @@ export type CartItemsOrderByWithAggregationInput = {
   color?: Prisma.SortOrder
   Quantity?: Prisma.SortOrder
   size?: Prisma.SortOrder
-  viewCart?: Prisma.SortOrder
+  viewCart?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.CartItemsCountOrderByAggregateInput
   _avg?: Prisma.CartItemsAvgOrderByAggregateInput
   _max?: Prisma.CartItemsMaxOrderByAggregateInput
@@ -302,7 +302,7 @@ export type CartItemsScalarWhereWithAggregatesInput = {
   color?: Prisma.StringWithAggregatesFilter<"CartItems"> | string
   Quantity?: Prisma.IntWithAggregatesFilter<"CartItems"> | number
   size?: Prisma.StringWithAggregatesFilter<"CartItems"> | string
-  viewCart?: Prisma.BoolWithAggregatesFilter<"CartItems"> | boolean
+  viewCart?: Prisma.BoolNullableWithAggregatesFilter<"CartItems"> | boolean | null
 }
 
 export type CartItemsCreateInput = {
@@ -312,7 +312,7 @@ export type CartItemsCreateInput = {
   color: string
   Quantity: number
   size: string
-  viewCart?: boolean
+  viewCart?: boolean | null
   pId: Prisma.ProductsCreateNestedOneWithoutCartInput
 }
 
@@ -324,7 +324,7 @@ export type CartItemsUncheckedCreateInput = {
   color: string
   Quantity: number
   size: string
-  viewCart?: boolean
+  viewCart?: boolean | null
 }
 
 export type CartItemsUpdateInput = {
@@ -334,7 +334,7 @@ export type CartItemsUpdateInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   pId?: Prisma.ProductsUpdateOneRequiredWithoutCartNestedInput
 }
 
@@ -346,7 +346,7 @@ export type CartItemsUncheckedUpdateInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type CartItemsCreateManyInput = {
@@ -357,7 +357,7 @@ export type CartItemsCreateManyInput = {
   color: string
   Quantity: number
   size: string
-  viewCart?: boolean
+  viewCart?: boolean | null
 }
 
 export type CartItemsUpdateManyMutationInput = {
@@ -367,7 +367,7 @@ export type CartItemsUpdateManyMutationInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type CartItemsUncheckedUpdateManyInput = {
@@ -378,7 +378,7 @@ export type CartItemsUncheckedUpdateManyInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type CartItemsListRelationFilter = {
@@ -490,8 +490,8 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
+export type NullableBoolFieldUpdateOperationsInput = {
+  set?: boolean | null
 }
 
 export type CartItemsCreateWithoutPIdInput = {
@@ -501,7 +501,7 @@ export type CartItemsCreateWithoutPIdInput = {
   color: string
   Quantity: number
   size: string
-  viewCart?: boolean
+  viewCart?: boolean | null
 }
 
 export type CartItemsUncheckedCreateWithoutPIdInput = {
@@ -511,7 +511,7 @@ export type CartItemsUncheckedCreateWithoutPIdInput = {
   color: string
   Quantity: number
   size: string
-  viewCart?: boolean
+  viewCart?: boolean | null
 }
 
 export type CartItemsCreateOrConnectWithoutPIdInput = {
@@ -551,7 +551,7 @@ export type CartItemsScalarWhereInput = {
   color?: Prisma.StringFilter<"CartItems"> | string
   Quantity?: Prisma.IntFilter<"CartItems"> | number
   size?: Prisma.StringFilter<"CartItems"> | string
-  viewCart?: Prisma.BoolFilter<"CartItems"> | boolean
+  viewCart?: Prisma.BoolNullableFilter<"CartItems"> | boolean | null
 }
 
 export type CartItemsCreateManyPIdInput = {
@@ -561,7 +561,7 @@ export type CartItemsCreateManyPIdInput = {
   color: string
   Quantity: number
   size: string
-  viewCart?: boolean
+  viewCart?: boolean | null
 }
 
 export type CartItemsUpdateWithoutPIdInput = {
@@ -571,7 +571,7 @@ export type CartItemsUpdateWithoutPIdInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type CartItemsUncheckedUpdateWithoutPIdInput = {
@@ -581,7 +581,7 @@ export type CartItemsUncheckedUpdateWithoutPIdInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type CartItemsUncheckedUpdateManyWithoutPIdInput = {
@@ -591,7 +591,7 @@ export type CartItemsUncheckedUpdateManyWithoutPIdInput = {
   color?: Prisma.StringFieldUpdateOperationsInput | string
   Quantity?: Prisma.IntFieldUpdateOperationsInput | number
   size?: Prisma.StringFieldUpdateOperationsInput | string
-  viewCart?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  viewCart?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 
@@ -667,7 +667,7 @@ export type $CartItemsPayload<ExtArgs extends runtime.Types.Extensions.InternalA
     color: string
     Quantity: number
     size: string
-    viewCart: boolean
+    viewCart: boolean | null
   }, ExtArgs["result"]["cartItems"]>
   composites: {}
 }
