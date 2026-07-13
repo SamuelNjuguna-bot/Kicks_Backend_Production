@@ -28,8 +28,15 @@ export const cartItem = async (req: Request, res: Response) => {
         color,
         userId: id,
         Quantity: Total,
+        viewCart:false
       },
       update:{
+      productId: prodId,
+      total_Amount: newtotal,
+      size: Size,
+      color,
+      userId: id,
+      Quantity: Total,
       viewCart:false
       }
     });
