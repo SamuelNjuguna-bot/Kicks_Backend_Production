@@ -26,6 +26,8 @@ import { handleCompletePayment } from "./Routes/Payment_Routes/Callback.js";
 import { checkStatus } from "./Routes/Payment_Routes/CheckPayment.js";
 import { fetchPurchased } from "./Routes/ProductRoutes/fetchPurchased.js";
 import { AllPurchasedProducts } from "./Routes/OrderRoutes/Purchased_Product.js";
+import { ClearHistory } from "./Routes/ProductRoutes/clearHistory.js";
+
 import cors from "cors";
 const app = express();
 const corsOptions = {
@@ -66,7 +68,10 @@ app.post("/callbackrecieve/:location/:itemId", handleCompletePayment);
 app.post("/checkpaymentstatus", checkStatus);
 app.post("/fetchpurchasedproducts", fetchPurchased);
 app.get("/allpurchasedproducts", AllPurchasedProducts);
+app.post("/clearhistory", ClearHistory)
+
 const PORT = 3000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
