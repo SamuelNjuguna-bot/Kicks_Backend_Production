@@ -6,7 +6,7 @@
 /*
  * This is a barrel export file for all models and their related types.
  *
- * 🟢 You can import this file directlyj
+ * 🟢 You can import this file directly.
  */
 export type * from './models/User.js'
 export type * from './models/Products.js'

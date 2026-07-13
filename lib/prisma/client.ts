@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url'
 globalThis['__dirname'] = path.dirname(fileURLToPath(import.meta.url))
 
 import * as runtime from "@prisma/client/runtime/client"
-import * as $Enums from "./enums.js"
+import * as $Enums from "./enums.ts"
 import * as $Class from "./internal/class.js"
 import * as Prisma from "./internal/prismaNamespace.js"
 
