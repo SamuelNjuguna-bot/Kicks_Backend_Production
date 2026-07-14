@@ -1,5 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 import { prisma } from "../../lib/prisma.js";
+import strict from "node:assert/strict";
 export const handleCompletePayment = async (
   req: Request,
   res: Response,
@@ -33,11 +34,17 @@ export const handleCompletePayment = async (
         Location: location,
         product: itemId,
         MerchantRequestID,
-        ResultCode, 
-        viewCart:false
+        ResultCode
       },
       })
- 
+ await prisma.cartItems.update({
+  where:{
+    productId:itemId
+  },
+  data:{
+    viewCart:false
+  }
+ })
 
  if (purchased) {
       res.json("ok saf");
