@@ -16,5 +16,5 @@ const cleared = await prisma.purchasedProduct.deleteMany({
         PhoneNumber:getPhonNo
     }
 })
-res.status(200).json({message :"Everything was okay ...."})
+res.status(200).json({message :"Everything was okay ....", cleared})
 }
