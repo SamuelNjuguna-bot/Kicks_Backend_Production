@@ -11,10 +11,11 @@ export const ClearHistory = async (req: Request, res: Response) => {
 const {getPhonNo} = req.body as unknown as PhonNo 
 
 
-const cleared = await prisma.purchasedProduct.deleteMany({
+const cleared = await prisma.purchasedProduct.findFirst({
     where:{
         PhoneNumber:getPhonNo
     }
 })
+
 res.status(200).json({message :"Everything was okay ....", cleared})
 }

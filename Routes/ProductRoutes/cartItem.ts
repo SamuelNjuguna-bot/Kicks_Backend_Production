@@ -28,7 +28,7 @@ export const cartItem = async (req: Request, res: Response) => {
         color,
         userId: id,
         Quantity: Total,
-        viewCart:false
+        viewCart:true
       },
       update:{
       productId: prodId,
@@ -37,7 +37,7 @@ export const cartItem = async (req: Request, res: Response) => {
       color,
       userId: id,
       Quantity: Total,
-      viewCart:false
+      viewCart:true
       }
     });
     const userId = mycart.userId;

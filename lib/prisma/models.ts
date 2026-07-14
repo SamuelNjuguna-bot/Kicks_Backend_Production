@@ -10,6 +10,6 @@
  */
 export type * from './models/User.js'
 export type * from './models/Products.js'
-export type * from './models/CartItems.ts'
+export type * from './models/CartItems.js'
 export type * from './models/PurchasedProduct.js'
 export type * from './commonInputTypes.js'

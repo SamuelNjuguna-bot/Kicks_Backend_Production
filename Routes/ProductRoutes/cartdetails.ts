@@ -11,7 +11,7 @@ export const cartDetails = async (req: Request, res: Response) => {
        AND:[
         { userId: id},
         {
-          viewCart:false
+          viewCart:true
         }
        ]
       },
