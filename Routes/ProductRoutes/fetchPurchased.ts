@@ -10,12 +10,12 @@ export const fetchPurchased = async (req: Request, res: Response) => {
       },
     });
 
-   const product = results.map((prod)=>{
-      if(prod.PhoneNumber===PhoneNumber){
-        return prod
+    const product = results.map((prod) => {
+      if (prod.PhoneNumber === PhoneNumber) {
+        return prod;
       }
-      return prod
-    })
+      return prod;
+    });
 
     res.status(200).json([product]);
   } catch (e) {

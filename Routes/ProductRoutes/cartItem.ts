@@ -18,8 +18,8 @@ export const cartItem = async (req: Request, res: Response) => {
     };
     const newtotal = total()!;
     const mycart = await prisma.cartItems.upsert({
-      where:{
-     productId:prodId
+      where: {
+        productId: prodId,
       },
       create: {
         productId: prodId,
@@ -28,17 +28,17 @@ export const cartItem = async (req: Request, res: Response) => {
         color,
         userId: id,
         Quantity: Total,
-        viewCart:true
+        viewCart: true,
       },
-      update:{
-      productId: prodId,
-      total_Amount: newtotal,
-      size: Size,
-      color,
-      userId: id,
-      Quantity: Total,
-      viewCart:true
-      }
+      update: {
+        productId: prodId,
+        total_Amount: newtotal,
+        size: Size,
+        color,
+        userId: id,
+        Quantity: Total,
+        viewCart: true,
+      },
     });
     const userId = mycart.userId;
     res.status(201).json({ userId, Total });

@@ -30,11 +30,11 @@ import { ClearHistory } from "./Routes/ProductRoutes/clearHistory.js";
 import cors from "cors";
 const app = express();
 const corsOptions = {
-  origin: "https://klassy-kicks-tq24-git-main-njuguna-samuels-projects.vercel.app",
+  origin:
+    "https://klassy-kicks-tq24-git-main-njuguna-samuels-projects.vercel.app",
   methods: "GET,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
-  
 };
 
 app.use(express.json());
@@ -42,9 +42,9 @@ app.use(express.json());
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
-app.get("/",async(req:Request, res:Response)=>{
-  res.json({message:"Homepage"})
-})
+app.get("/", async (req: Request, res: Response) => {
+  res.json({ message: "Homepage" });
+});
 app.post("/signup", getUser, signUp);
 app.post("/login", login);
 app.post("/uploadproduct", uploadProduct);
@@ -67,14 +67,11 @@ app.post("/callbackrecieve/:location/:itemId", handleCompletePayment);
 app.post("/checkpaymentstatus", checkStatus);
 app.post("/fetchpurchasedproducts", fetchPurchased);
 app.get("/allpurchasedproducts", AllPurchasedProducts);
-app.post("/clearhistory", ClearHistory)
+app.post("/clearhistory", ClearHistory);
 
 const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-export default app
-
-
-
+export default app;

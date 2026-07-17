@@ -8,12 +8,12 @@ export const cartDetails = async (req: Request, res: Response) => {
   try {
     const cartdetails = await prisma.cartItems.findMany({
       where: {
-       AND:[
-        { userId: id},
-        {
-          viewCart:true
-        }
-       ]
+        AND: [
+          { userId: id },
+          {
+            viewCart: true,
+          },
+        ],
       },
       include: {
         pId: true,
