@@ -8,13 +8,11 @@ const JWTSECRETKEY: string = process.env.JWT_SECRET_KEY!;
 
 export default async function ForgotPassword(req: Request, res: Response) {
   try {
-    const { email, password } = req.body;
-
+    const { phone, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 12);
-
     const changedPassword = await prisma.user.update({
       where: {
-        email,
+        phone,
       },
       data: {
         password: hashedPassword,
