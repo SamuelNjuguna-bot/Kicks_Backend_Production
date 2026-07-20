@@ -2,7 +2,7 @@ import type { Request, Response, NextFunction } from "express";
 import { prisma } from "../lib/prisma.js";
 
 interface email {
-  email: string;
+  phone: string;
 }
 
 export default async function CheckEmail(
@@ -11,10 +11,10 @@ export default async function CheckEmail(
   next: NextFunction,
 ) {
   try {
-    const { email } = req.params as unknown as email;
+    const { phone } = req.params as unknown as email;
     const userEmail = await prisma.user.findFirst({
       where: {
-        email,
+        phone,
       },
     });
     if (userEmail) {
