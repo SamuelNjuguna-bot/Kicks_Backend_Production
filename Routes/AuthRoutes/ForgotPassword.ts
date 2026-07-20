@@ -7,7 +7,6 @@ dotenv.config();
 export default async function ForgotPassword(req: Request, res: Response) {
   try {
     const { phone, password } = req.body ;
-    console.log(phone, password)
     const hashedPassword = await bcrypt.hash(password, 12);
     const changedPassword = await prisma.user.update({
       where: {
