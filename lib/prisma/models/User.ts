@@ -198,11 +198,11 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   username?: string
   email?: string
   password?: string
+  phone?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
-  phone?: Prisma.StringFilter<"User"> | string
-}, "id" | "username" | "email" | "password">
+}, "id" | "username" | "email" | "password" | "phone">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -231,7 +231,7 @@ export type UserCreateInput = {
   username: string
   email: string
   password: string
-  phone?: string
+  phone: string
 }
 
 export type UserUncheckedCreateInput = {
@@ -239,7 +239,7 @@ export type UserUncheckedCreateInput = {
   username: string
   email: string
   password: string
-  phone?: string
+  phone: string
 }
 
 export type UserUpdateInput = {
@@ -263,7 +263,7 @@ export type UserCreateManyInput = {
   username: string
   email: string
   password: string
-  phone?: string
+  phone: string
 }
 
 export type UserUpdateManyMutationInput = {
