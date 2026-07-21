@@ -31,7 +31,7 @@ import cors from "cors";
 const app = express();
 const corsOptions = {
   origin:
-    "https://klassy-kicks-tq24-git-main-njuguna-samuels-projects.vercel.app",
+    "https://klassy.vercel.app/",
   methods: "GET,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
