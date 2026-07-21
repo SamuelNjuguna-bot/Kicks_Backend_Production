@@ -68,10 +68,4 @@ app.post("/checkpaymentstatus", checkStatus);
 app.post("/fetchpurchasedproducts", fetchPurchased);
 app.get("/allpurchasedproducts", AllPurchasedProducts);
 app.post("/clearhistory", ClearHistory);
-
-const PORT = 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 export default app;
