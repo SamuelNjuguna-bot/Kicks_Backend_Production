@@ -11,7 +11,6 @@ export const fetchPurchased = async (req: Request, res: Response) => {
     });
 
     const product = results.map((prod) => {
-  
       if (prod.PhoneNumber === PhoneNumber && prod.ResultCode==='0') {
         return prod;
       }
