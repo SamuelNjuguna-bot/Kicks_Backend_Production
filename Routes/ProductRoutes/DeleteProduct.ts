@@ -13,7 +13,7 @@ export const DeleteProduct = async (req: Request, res: Response) => {
         id,
       },
     });
-    res.status(204).json({
+    res.status(200).json({
       message: "Product deleted successfully",
     });
   } catch {
