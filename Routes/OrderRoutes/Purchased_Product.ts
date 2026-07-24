@@ -8,7 +8,7 @@ export const AllPurchasedProducts = async (req: Request, res: Response) => {
       },
     });
      const AllPurchases = All.map((prod) => {
-      if (prod.ResultCode==="0") {
+      if (prod.ResultCode==="0"&& prod.PhoneNumber) {
         return prod;
       }
       return prod;
