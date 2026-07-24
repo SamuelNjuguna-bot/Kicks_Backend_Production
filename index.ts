@@ -30,8 +30,7 @@ import { ClearHistory } from "./Routes/ProductRoutes/clearHistory.js";
 import cors from "cors";
 const app = express();
 const corsOptions = {
-  origin:
-    "https://klassy.vercel.app",
+  origin: "https://klassy.vercel.app",
   methods: "GET,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,

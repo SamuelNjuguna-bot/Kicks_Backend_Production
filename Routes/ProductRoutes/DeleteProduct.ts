@@ -8,7 +8,7 @@ interface Id {
 export const DeleteProduct = async (req: Request, res: Response) => {
   const { id } = req.params as unknown as Id;
   try {
-     await prisma.products.delete({
+    await prisma.products.delete({
       where: {
         id,
       },

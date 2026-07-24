@@ -7,7 +7,7 @@ dotenv.config();
 const JWTSECRETKEY: string = process.env.JWT_SECRET_KEY!;
 
 export const signUp = async (req: Request, res: Response) => {
-  const { username, email, password,phone } = req.body;
+  const { username, email, password, phone } = req.body;
   const hashedPassword = await bcrypt.hash(password, 12);
   try {
     await prisma.user.create({
@@ -15,7 +15,7 @@ export const signUp = async (req: Request, res: Response) => {
         username,
         email,
         password: hashedPassword,
-        phone
+        phone,
       },
     });
     res.status(201).json({
