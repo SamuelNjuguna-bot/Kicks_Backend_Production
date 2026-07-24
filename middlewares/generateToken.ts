@@ -2,6 +2,7 @@ import axios from "axios";
 import type { Request, Response, NextFunction } from "express";
 export type RequestExtended = Request & { token?: string };
 
+ 
 export const generateToken = async (
   req: RequestExtended,
   _res: Response,
