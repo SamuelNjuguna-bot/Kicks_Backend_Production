@@ -1,6 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
 import { prisma } from "../../lib/prisma.js";
-import strict from "node:assert/strict";
 export const handleCompletePayment = async (
   req: Request,
   res: Response,
