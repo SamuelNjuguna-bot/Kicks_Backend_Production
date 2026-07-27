@@ -16,6 +16,7 @@ export const fetchPurchased = async (req: Request, res: Response) => {
       }
       return prod;
     });
+    console.log(product)
     if(product){
     res.status(200).json([product]);
 
