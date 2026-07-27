@@ -11,13 +11,16 @@ export const fetchPurchased = async (req: Request, res: Response) => {
     });
 
     const product = results.map((prod) => {
-      if (prod.PhoneNumber === PhoneNumber && prod.ResultCode==='0') {
+      if (prod.PhoneNumber === PhoneNumber && prod.ResultCode==='0'&& prod.isDeleted===false) {
         return prod;
       }
       return prod;
     });
-
+    if(product){
     res.status(200).json([product]);
+
+    }
+
   } catch (e) {
     res.status(500).json({ message: "An Error Occurred please try again" });
   }
