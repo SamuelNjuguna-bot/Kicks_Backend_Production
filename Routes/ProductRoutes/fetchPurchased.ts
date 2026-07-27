@@ -11,7 +11,7 @@ export const fetchPurchased = async (req: Request, res: Response) => {
     });
 
     const product = results.filter((prod)=>{
-      return prod.PhoneNumber && prod.ResultCode==="0" && prod.isDeleted===false
+      return prod.PhoneNumber===PhoneNumber && prod.ResultCode==="0" && prod.isDeleted===false
     })
     if(product){
     res.status(200).json([product]);
