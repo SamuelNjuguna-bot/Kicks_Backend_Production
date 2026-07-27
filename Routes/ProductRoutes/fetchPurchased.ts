@@ -10,16 +10,11 @@ export const fetchPurchased = async (req: Request, res: Response) => {
       },
     });
 
-    const product = results.map((prod) => {
-      if (prod.PhoneNumber === PhoneNumber && prod.ResultCode==='0'&& prod.isDeleted===false) {
-        return prod;
-      }
-      return prod;
-    });
-    console.log(product)
+    const product = results.filter((prod)=>{
+      return prod.PhoneNumber && prod.ResultCode==="0" && prod.isDeleted===false
+    })
     if(product){
     res.status(200).json([product]);
-
     }
 
   } catch (e) {
