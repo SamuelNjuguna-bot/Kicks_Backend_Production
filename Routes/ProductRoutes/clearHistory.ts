@@ -7,10 +7,13 @@ interface PhonNo {
 export const ClearHistory = async (req: Request, res: Response) => {
   const { getPhonNo } = req.body as unknown as PhonNo;
   try {
-    const cleared = await prisma.purchasedProduct.deleteMany({
+    const cleared = await prisma.purchasedProduct.updateMany({
       where: {
         PhoneNumber: getPhonNo,
       },
+      data:{
+        isDeleted:true
+      }
     });
     res.status(200).json({ message: "Everything was okay ....", cleared });
   } catch (e) {
