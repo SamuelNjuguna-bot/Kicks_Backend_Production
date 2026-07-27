@@ -68,5 +68,5 @@ app.post("/checkpaymentstatus", checkStatus);
 app.post("/fetchpurchasedproducts", fetchPurchased);
 app.get("/allpurchasedproducts", AllPurchasedProducts);
 app.post("/clearhistory", ClearHistory);
-app.post("/remove", Remove)
+app.post("/remove", Remove);
 export default app;

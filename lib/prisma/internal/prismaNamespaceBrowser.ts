@@ -122,6 +122,7 @@ export const PurchasedProductScalarFieldEnum = {
   MerchantRequestID: 'MerchantRequestID',
   product: 'product',
   ResultCode: 'ResultCode',
+  isAdminDeleted: 'isAdminDeleted',
   isDeleted: 'isDeleted'
 } as const
 

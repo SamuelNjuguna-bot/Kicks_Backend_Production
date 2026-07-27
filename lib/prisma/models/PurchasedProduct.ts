@@ -44,6 +44,7 @@ export type PurchasedProductMinAggregateOutputType = {
   MerchantRequestID: string | null
   product: string | null
   ResultCode: string | null
+  isAdminDeleted: boolean | null
   isDeleted: boolean | null
 }
 
@@ -57,6 +58,7 @@ export type PurchasedProductMaxAggregateOutputType = {
   MerchantRequestID: string | null
   product: string | null
   ResultCode: string | null
+  isAdminDeleted: boolean | null
   isDeleted: boolean | null
 }
 
@@ -70,6 +72,7 @@ export type PurchasedProductCountAggregateOutputType = {
   MerchantRequestID: number
   product: number
   ResultCode: number
+  isAdminDeleted: number
   isDeleted: number
   _all: number
 }
@@ -93,6 +96,7 @@ export type PurchasedProductMinAggregateInputType = {
   MerchantRequestID?: true
   product?: true
   ResultCode?: true
+  isAdminDeleted?: true
   isDeleted?: true
 }
 
@@ -106,6 +110,7 @@ export type PurchasedProductMaxAggregateInputType = {
   MerchantRequestID?: true
   product?: true
   ResultCode?: true
+  isAdminDeleted?: true
   isDeleted?: true
 }
 
@@ -119,6 +124,7 @@ export type PurchasedProductCountAggregateInputType = {
   MerchantRequestID?: true
   product?: true
   ResultCode?: true
+  isAdminDeleted?: true
   isDeleted?: true
   _all?: true
 }
@@ -219,6 +225,7 @@ export type PurchasedProductGroupByOutputType = {
   MerchantRequestID: string | null
   product: string
   ResultCode: string
+  isAdminDeleted: boolean | null
   isDeleted: boolean | null
   _count: PurchasedProductCountAggregateOutputType | null
   _avg: PurchasedProductAvgAggregateOutputType | null
@@ -255,6 +262,7 @@ export type PurchasedProductWhereInput = {
   MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
+  isAdminDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   isDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }
@@ -269,6 +277,7 @@ export type PurchasedProductOrderByWithRelationInput = {
   MerchantRequestID?: Prisma.SortOrderInput | Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isAdminDeleted?: Prisma.SortOrderInput | Prisma.SortOrder
   isDeleted?: Prisma.SortOrderInput | Prisma.SortOrder
   purchasedId?: Prisma.ProductsOrderByWithRelationInput
   _relevance?: Prisma.PurchasedProductOrderByRelevanceInput
@@ -287,6 +296,7 @@ export type PurchasedProductWhereUniqueInput = Prisma.AtLeast<{
   MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
+  isAdminDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   isDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }, "acquiredId">
@@ -301,6 +311,7 @@ export type PurchasedProductOrderByWithAggregationInput = {
   MerchantRequestID?: Prisma.SortOrderInput | Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isAdminDeleted?: Prisma.SortOrderInput | Prisma.SortOrder
   isDeleted?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.PurchasedProductCountOrderByAggregateInput
   _avg?: Prisma.PurchasedProductAvgOrderByAggregateInput
@@ -322,6 +333,7 @@ export type PurchasedProductScalarWhereWithAggregatesInput = {
   MerchantRequestID?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
+  isAdminDeleted?: Prisma.BoolNullableWithAggregatesFilter<"PurchasedProduct"> | boolean | null
   isDeleted?: Prisma.BoolNullableWithAggregatesFilter<"PurchasedProduct"> | boolean | null
 }
 
@@ -334,6 +346,7 @@ export type PurchasedProductCreateInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isAdminDeleted?: boolean | null
   isDeleted?: boolean | null
   purchasedId: Prisma.ProductsCreateNestedOneWithoutPurchasedInput
 }
@@ -348,6 +361,7 @@ export type PurchasedProductUncheckedCreateInput = {
   MerchantRequestID?: string | null
   product: string
   ResultCode: string
+  isAdminDeleted?: boolean | null
   isDeleted?: boolean | null
 }
 
@@ -360,6 +374,7 @@ export type PurchasedProductUpdateInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   purchasedId?: Prisma.ProductsUpdateOneRequiredWithoutPurchasedNestedInput
 }
@@ -374,6 +389,7 @@ export type PurchasedProductUncheckedUpdateInput = {
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
@@ -387,6 +403,7 @@ export type PurchasedProductCreateManyInput = {
   MerchantRequestID?: string | null
   product: string
   ResultCode: string
+  isAdminDeleted?: boolean | null
   isDeleted?: boolean | null
 }
 
@@ -399,6 +416,7 @@ export type PurchasedProductUpdateManyMutationInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
@@ -412,6 +430,7 @@ export type PurchasedProductUncheckedUpdateManyInput = {
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
@@ -441,6 +460,7 @@ export type PurchasedProductCountOrderByAggregateInput = {
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isAdminDeleted?: Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
 }
 
@@ -458,6 +478,7 @@ export type PurchasedProductMaxOrderByAggregateInput = {
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isAdminDeleted?: Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
 }
 
@@ -471,6 +492,7 @@ export type PurchasedProductMinOrderByAggregateInput = {
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isAdminDeleted?: Prisma.SortOrder
   isDeleted?: Prisma.SortOrder
 }
 
@@ -541,6 +563,7 @@ export type PurchasedProductCreateWithoutPurchasedIdInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isAdminDeleted?: boolean | null
   isDeleted?: boolean | null
 }
 
@@ -553,6 +576,7 @@ export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isAdminDeleted?: boolean | null
   isDeleted?: boolean | null
 }
 
@@ -595,6 +619,7 @@ export type PurchasedProductScalarWhereInput = {
   MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
+  isAdminDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   isDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
 }
 
@@ -607,6 +632,7 @@ export type PurchasedProductCreateManyPurchasedIdInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isAdminDeleted?: boolean | null
   isDeleted?: boolean | null
 }
 
@@ -619,6 +645,7 @@ export type PurchasedProductUpdateWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
@@ -631,6 +658,7 @@ export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
@@ -643,6 +671,7 @@ export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isAdminDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
@@ -658,6 +687,7 @@ export type PurchasedProductSelect<ExtArgs extends runtime.Types.Extensions.Inte
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isAdminDeleted?: boolean
   isDeleted?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
@@ -672,6 +702,7 @@ export type PurchasedProductSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isAdminDeleted?: boolean
   isDeleted?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
@@ -686,6 +717,7 @@ export type PurchasedProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isAdminDeleted?: boolean
   isDeleted?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
@@ -700,10 +732,11 @@ export type PurchasedProductSelectScalar = {
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isAdminDeleted?: boolean
   isDeleted?: boolean
 }
 
-export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product" | "ResultCode" | "isDeleted", ExtArgs["result"]["purchasedProduct"]>
+export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product" | "ResultCode" | "isAdminDeleted" | "isDeleted", ExtArgs["result"]["purchasedProduct"]>
 export type PurchasedProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }
@@ -729,6 +762,7 @@ export type $PurchasedProductPayload<ExtArgs extends runtime.Types.Extensions.In
     MerchantRequestID: string | null
     product: string
     ResultCode: string
+    isAdminDeleted: boolean | null
     isDeleted: boolean | null
   }, ExtArgs["result"]["purchasedProduct"]>
   composites: {}
@@ -1163,6 +1197,7 @@ export interface PurchasedProductFieldRefs {
   readonly MerchantRequestID: Prisma.FieldRef<"PurchasedProduct", 'String'>
   readonly product: Prisma.FieldRef<"PurchasedProduct", 'String'>
   readonly ResultCode: Prisma.FieldRef<"PurchasedProduct", 'String'>
+  readonly isAdminDeleted: Prisma.FieldRef<"PurchasedProduct", 'Boolean'>
   readonly isDeleted: Prisma.FieldRef<"PurchasedProduct", 'Boolean'>
 }
     

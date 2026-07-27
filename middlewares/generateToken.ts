@@ -1,8 +1,12 @@
 import axios from "axios";
-import { type Request, type Response, type NextFunction, response } from "express";
+import {
+  type Request,
+  type Response,
+  type NextFunction,
+  response,
+} from "express";
 export type RequestExtended = Request & { token?: string };
 
- 
 export const generateToken = async (
   req: RequestExtended,
   _res: Response,
@@ -25,7 +29,9 @@ export const generateToken = async (
     });
     req.token = response.data.access_token;
     next();
-  } catch (e:any) {
-    _res.status(500).json({message:"Oops...failed to initiate payment.Please try again"})}
+  } catch (e: any) {
+    _res
+      .status(500)
+      .json({ message: "Oops...failed to initiate payment.Please try again" });
   }
-;
+};

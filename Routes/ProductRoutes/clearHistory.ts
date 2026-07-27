@@ -11,9 +11,9 @@ export const ClearHistory = async (req: Request, res: Response) => {
       where: {
         PhoneNumber: getPhonNo,
       },
-      data:{
-        isDeleted:true
-      }
+      data: {
+        isDeleted: true,
+      },
     });
     res.status(200).json({ message: "Everything was okay ....", cleared });
   } catch (e) {

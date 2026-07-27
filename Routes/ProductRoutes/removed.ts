@@ -4,16 +4,16 @@ interface acqId {
   acquiredId: string;
 }
 
-export const Remove= async (req: Request, res: Response) => {
+export const Remove = async (req: Request, res: Response) => {
   const { acquiredId } = req.body as unknown as acqId;
   try {
     const cleared = await prisma.purchasedProduct.updateMany({
       where: {
-     acquiredId
+        acquiredId,
       },
-      data:{
-        isDeleted:true
-      }
+      data: {
+        isAdminDeleted: true,
+      },
     });
     res.status(200).json({ message: "Everything was okay ....", cleared });
   } catch (e) {

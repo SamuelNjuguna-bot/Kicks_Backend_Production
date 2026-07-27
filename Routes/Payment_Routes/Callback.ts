@@ -30,7 +30,8 @@ export const handleCompletePayment = async (
           product: itemId,
           MerchantRequestID,
           ResultCode,
-          isDeleted:false
+          isDeleted: false,
+          isAdminDeleted:true
         },
       });
       await prisma.cartItems.update({
@@ -39,7 +40,6 @@ export const handleCompletePayment = async (
         },
         data: {
           viewCart: false,
-          
         },
       });
 

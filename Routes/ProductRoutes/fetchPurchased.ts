@@ -10,14 +10,17 @@ export const fetchPurchased = async (req: Request, res: Response) => {
       },
     });
 
-    const product = results.filter((prod)=>{
-      return prod.PhoneNumber===PhoneNumber && prod.ResultCode==="0" && prod.isDeleted===false
-    })
-    console.log(product)
-    if(product){
-    res.status(200).json([product]);
+    const product = results.filter((prod) => {
+      return (
+        prod.PhoneNumber === PhoneNumber &&
+        prod.ResultCode === "0" &&
+        prod.isDeleted === false
+      );
+    });
+    console.log(product);
+    if (product) {
+      res.status(200).json([product]);
     }
-
   } catch (e) {
     res.status(500).json({ message: "An Error Occurred please try again" });
   }
