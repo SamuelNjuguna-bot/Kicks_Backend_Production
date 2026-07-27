@@ -57,4 +57,5 @@ model PurchasedProduct{
   product String
   purchasedId Products @relation(fields: [product] , references: [id])
   ResultCode String 
+  isDeleted Boolean? 
 }

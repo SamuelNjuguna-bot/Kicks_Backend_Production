@@ -121,7 +121,8 @@ export const PurchasedProductScalarFieldEnum = {
   Location: 'Location',
   MerchantRequestID: 'MerchantRequestID',
   product: 'product',
-  ResultCode: 'ResultCode'
+  ResultCode: 'ResultCode',
+  isDeleted: 'isDeleted'
 } as const
 
 export type PurchasedProductScalarFieldEnum = (typeof PurchasedProductScalarFieldEnum)[keyof typeof PurchasedProductScalarFieldEnum]

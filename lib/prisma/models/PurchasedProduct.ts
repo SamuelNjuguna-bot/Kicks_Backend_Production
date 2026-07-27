@@ -44,6 +44,7 @@ export type PurchasedProductMinAggregateOutputType = {
   MerchantRequestID: string | null
   product: string | null
   ResultCode: string | null
+  isDeleted: boolean | null
 }
 
 export type PurchasedProductMaxAggregateOutputType = {
@@ -56,6 +57,7 @@ export type PurchasedProductMaxAggregateOutputType = {
   MerchantRequestID: string | null
   product: string | null
   ResultCode: string | null
+  isDeleted: boolean | null
 }
 
 export type PurchasedProductCountAggregateOutputType = {
@@ -68,6 +70,7 @@ export type PurchasedProductCountAggregateOutputType = {
   MerchantRequestID: number
   product: number
   ResultCode: number
+  isDeleted: number
   _all: number
 }
 
@@ -90,6 +93,7 @@ export type PurchasedProductMinAggregateInputType = {
   MerchantRequestID?: true
   product?: true
   ResultCode?: true
+  isDeleted?: true
 }
 
 export type PurchasedProductMaxAggregateInputType = {
@@ -102,6 +106,7 @@ export type PurchasedProductMaxAggregateInputType = {
   MerchantRequestID?: true
   product?: true
   ResultCode?: true
+  isDeleted?: true
 }
 
 export type PurchasedProductCountAggregateInputType = {
@@ -114,6 +119,7 @@ export type PurchasedProductCountAggregateInputType = {
   MerchantRequestID?: true
   product?: true
   ResultCode?: true
+  isDeleted?: true
   _all?: true
 }
 
@@ -213,6 +219,7 @@ export type PurchasedProductGroupByOutputType = {
   MerchantRequestID: string | null
   product: string
   ResultCode: string
+  isDeleted: boolean | null
   _count: PurchasedProductCountAggregateOutputType | null
   _avg: PurchasedProductAvgAggregateOutputType | null
   _sum: PurchasedProductSumAggregateOutputType | null
@@ -248,6 +255,7 @@ export type PurchasedProductWhereInput = {
   MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
+  isDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }
 
@@ -261,6 +269,7 @@ export type PurchasedProductOrderByWithRelationInput = {
   MerchantRequestID?: Prisma.SortOrderInput | Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrderInput | Prisma.SortOrder
   purchasedId?: Prisma.ProductsOrderByWithRelationInput
   _relevance?: Prisma.PurchasedProductOrderByRelevanceInput
 }
@@ -278,6 +287,7 @@ export type PurchasedProductWhereUniqueInput = Prisma.AtLeast<{
   MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
+  isDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
   purchasedId?: Prisma.XOR<Prisma.ProductsScalarRelationFilter, Prisma.ProductsWhereInput>
 }, "acquiredId">
 
@@ -291,6 +301,7 @@ export type PurchasedProductOrderByWithAggregationInput = {
   MerchantRequestID?: Prisma.SortOrderInput | Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.PurchasedProductCountOrderByAggregateInput
   _avg?: Prisma.PurchasedProductAvgOrderByAggregateInput
   _max?: Prisma.PurchasedProductMaxOrderByAggregateInput
@@ -311,6 +322,7 @@ export type PurchasedProductScalarWhereWithAggregatesInput = {
   MerchantRequestID?: Prisma.StringNullableWithAggregatesFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringWithAggregatesFilter<"PurchasedProduct"> | string
+  isDeleted?: Prisma.BoolNullableWithAggregatesFilter<"PurchasedProduct"> | boolean | null
 }
 
 export type PurchasedProductCreateInput = {
@@ -322,6 +334,7 @@ export type PurchasedProductCreateInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isDeleted?: boolean | null
   purchasedId: Prisma.ProductsCreateNestedOneWithoutPurchasedInput
 }
 
@@ -335,6 +348,7 @@ export type PurchasedProductUncheckedCreateInput = {
   MerchantRequestID?: string | null
   product: string
   ResultCode: string
+  isDeleted?: boolean | null
 }
 
 export type PurchasedProductUpdateInput = {
@@ -346,6 +360,7 @@ export type PurchasedProductUpdateInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
   purchasedId?: Prisma.ProductsUpdateOneRequiredWithoutPurchasedNestedInput
 }
 
@@ -359,6 +374,7 @@ export type PurchasedProductUncheckedUpdateInput = {
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type PurchasedProductCreateManyInput = {
@@ -371,6 +387,7 @@ export type PurchasedProductCreateManyInput = {
   MerchantRequestID?: string | null
   product: string
   ResultCode: string
+  isDeleted?: boolean | null
 }
 
 export type PurchasedProductUpdateManyMutationInput = {
@@ -382,6 +399,7 @@ export type PurchasedProductUpdateManyMutationInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type PurchasedProductUncheckedUpdateManyInput = {
@@ -394,6 +412,7 @@ export type PurchasedProductUncheckedUpdateManyInput = {
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   product?: Prisma.StringFieldUpdateOperationsInput | string
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type PurchasedProductListRelationFilter = {
@@ -422,6 +441,7 @@ export type PurchasedProductCountOrderByAggregateInput = {
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
 }
 
 export type PurchasedProductAvgOrderByAggregateInput = {
@@ -438,6 +458,7 @@ export type PurchasedProductMaxOrderByAggregateInput = {
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
 }
 
 export type PurchasedProductMinOrderByAggregateInput = {
@@ -450,6 +471,7 @@ export type PurchasedProductMinOrderByAggregateInput = {
   MerchantRequestID?: Prisma.SortOrder
   product?: Prisma.SortOrder
   ResultCode?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
 }
 
 export type PurchasedProductSumOrderByAggregateInput = {
@@ -519,6 +541,7 @@ export type PurchasedProductCreateWithoutPurchasedIdInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isDeleted?: boolean | null
 }
 
 export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
@@ -530,6 +553,7 @@ export type PurchasedProductUncheckedCreateWithoutPurchasedIdInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isDeleted?: boolean | null
 }
 
 export type PurchasedProductCreateOrConnectWithoutPurchasedIdInput = {
@@ -571,6 +595,7 @@ export type PurchasedProductScalarWhereInput = {
   MerchantRequestID?: Prisma.StringNullableFilter<"PurchasedProduct"> | string | null
   product?: Prisma.StringFilter<"PurchasedProduct"> | string
   ResultCode?: Prisma.StringFilter<"PurchasedProduct"> | string
+  isDeleted?: Prisma.BoolNullableFilter<"PurchasedProduct"> | boolean | null
 }
 
 export type PurchasedProductCreateManyPurchasedIdInput = {
@@ -582,6 +607,7 @@ export type PurchasedProductCreateManyPurchasedIdInput = {
   Location?: string | null
   MerchantRequestID?: string | null
   ResultCode: string
+  isDeleted?: boolean | null
 }
 
 export type PurchasedProductUpdateWithoutPurchasedIdInput = {
@@ -593,6 +619,7 @@ export type PurchasedProductUpdateWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
@@ -604,6 +631,7 @@ export type PurchasedProductUncheckedUpdateWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
@@ -615,6 +643,7 @@ export type PurchasedProductUncheckedUpdateManyWithoutPurchasedIdInput = {
   Location?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   MerchantRequestID?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   ResultCode?: Prisma.StringFieldUpdateOperationsInput | string
+  isDeleted?: Prisma.NullableBoolFieldUpdateOperationsInput | boolean | null
 }
 
 
@@ -629,6 +658,7 @@ export type PurchasedProductSelect<ExtArgs extends runtime.Types.Extensions.Inte
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isDeleted?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
@@ -642,6 +672,7 @@ export type PurchasedProductSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isDeleted?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
@@ -655,6 +686,7 @@ export type PurchasedProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isDeleted?: boolean
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["purchasedProduct"]>
 
@@ -668,9 +700,10 @@ export type PurchasedProductSelectScalar = {
   MerchantRequestID?: boolean
   product?: boolean
   ResultCode?: boolean
+  isDeleted?: boolean
 }
 
-export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product" | "ResultCode", ExtArgs["result"]["purchasedProduct"]>
+export type PurchasedProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"acquiredId" | "productId" | "TransactionString" | "PhoneNumber" | "Amount" | "Location" | "MerchantRequestID" | "product" | "ResultCode" | "isDeleted", ExtArgs["result"]["purchasedProduct"]>
 export type PurchasedProductInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchasedId?: boolean | Prisma.ProductsDefaultArgs<ExtArgs>
 }
@@ -696,6 +729,7 @@ export type $PurchasedProductPayload<ExtArgs extends runtime.Types.Extensions.In
     MerchantRequestID: string | null
     product: string
     ResultCode: string
+    isDeleted: boolean | null
   }, ExtArgs["result"]["purchasedProduct"]>
   composites: {}
 }
@@ -1129,6 +1163,7 @@ export interface PurchasedProductFieldRefs {
   readonly MerchantRequestID: Prisma.FieldRef<"PurchasedProduct", 'String'>
   readonly product: Prisma.FieldRef<"PurchasedProduct", 'String'>
   readonly ResultCode: Prisma.FieldRef<"PurchasedProduct", 'String'>
+  readonly isDeleted: Prisma.FieldRef<"PurchasedProduct", 'Boolean'>
 }
     
 
