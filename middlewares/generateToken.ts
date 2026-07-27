@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Request, Response, NextFunction } from "express";
+import { type Request, type Response, type NextFunction, response } from "express";
 export type RequestExtended = Request & { token?: string };
 
  
@@ -25,7 +25,7 @@ export const generateToken = async (
     });
     req.token = response.data.access_token;
     next();
-  } catch (error: any) {
-    throw new Error(`Failed to generate access token: ${error.message}`);
+  } catch (e:any) {
+    _res.status(500).json({message:"Oops...failed to initiate payment.Please try again"})}
   }
-};
+;
