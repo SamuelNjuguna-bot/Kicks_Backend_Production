@@ -8,7 +8,7 @@ export const AllPurchasedProducts = async (req: Request, res: Response) => {
       },
     });
     const AllPurchases = All.filter((prod) => {
-      return( prod.PhoneNumber && prod.ResultCode === "0" && prod.isDeleted === false && prod.isAdminDeleted===false)
+      return( prod.PhoneNumber && prod.ResultCode === "0" &&  prod.isAdminDeleted===false)
     });
 
     res.status(200).json([AllPurchases]);
