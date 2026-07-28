@@ -38,7 +38,7 @@ model CartItems{
   cartId String @id @default(uuid())
   productId String @unique
   userId String 
-  pId Products @relation(fields: [productId], references: [id])
+  pId Products @relation(fields: [productId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   total_Amount Int
   color String  
   Quantity Int
@@ -55,7 +55,7 @@ model PurchasedProduct{
   Location String?
   MerchantRequestID String?
   product String
-  purchasedId Products @relation(fields: [product] , references: [id])
+  purchasedId Products @relation(fields: [product] , references: [id],onDelete: Cascade,onUpdate: Cascade)
   ResultCode String 
   isAdminDeleted Boolean?
   isDeleted Boolean? 

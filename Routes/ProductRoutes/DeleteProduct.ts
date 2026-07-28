@@ -19,10 +19,6 @@ const del =    await prisma.products.delete({
       message: "Product deleted successfully",
     });
     }
- 
-    
-  
-
   } catch {
     res.status(500).json({
       message: "internal server error",
