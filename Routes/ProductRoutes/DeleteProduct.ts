@@ -9,14 +9,17 @@ export const DeleteProduct = async (req: Request, res: Response) => {
   const { id } = req.params as unknown as Id;
   try {
     
-    await prisma.products.delete({
+const del =    await prisma.products.delete({
       where: {
         id
       }
     })
-    res.status(200).json({
+    if(del){
+   res.status(200).json({
       message: "Product deleted successfully",
     });
+    }
+ 
     
   
 
