@@ -12,13 +12,13 @@ export const DeleteProduct = async (req: Request, res: Response) => {
     await prisma.products.delete({
       where: {
         id
-      },
+      }
     })
     res.status(200).json({
       message: "Product deleted successfully",
     });
     
-    
+  
 
   } catch {
     res.status(500).json({
