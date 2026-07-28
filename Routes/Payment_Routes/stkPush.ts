@@ -22,8 +22,6 @@ const handleStkPush = async (req: RequestExtended, res: Response) => {
     AccountReference: ` Buy ${product_Name} from Klassy Kicks.`,
     TransactionDesc: "Payment",
   };
-  console.log(req.token)
-
   try {
     const response = await axios.post(
       "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
