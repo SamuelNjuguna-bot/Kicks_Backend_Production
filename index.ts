@@ -62,7 +62,7 @@ app.post("/lipanampesa", generateToken, handleStkPush);
 app.patch("/patchpassword", ForgotPassword);
 app.get("/changepassword/:email", CheckEmail);
 app.get("/getallproducts", fetchAll);
-app.delete("/deleteitem/:id", DeleteProduct);
+app.post("/deleteitem/:id", DeleteProduct);
 app.post("/callbackrecieve/:location/:itemId", handleCompletePayment);
 app.post("/checkpaymentstatus", checkStatus);
 app.post("/fetchpurchasedproducts", fetchPurchased);
