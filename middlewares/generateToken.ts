@@ -28,7 +28,6 @@ export const generateToken = async (
       },
     });
     req.token = response.data.access_token;
-    console.log(req.token)
     next();
   } catch (e: any) {
     _res
